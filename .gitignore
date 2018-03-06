@@ -1,0 +1,15 @@
+node_modules
+*.log
+dist/
+output/
+build/
+src/static/dist/
+
+
+# Config
+
+config.json
+gc.json
+
+# Babel
+.babel_cache/
