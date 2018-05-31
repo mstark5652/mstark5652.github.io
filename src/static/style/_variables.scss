@@ -1,10 +1,21 @@
 $background-color: #fff;
+$light-background-color: #eee;
 $dark-text-color: #333;
 $light-text-color: #fff;
 $base-font-family: 'Roboto', sans-serif;
 
-$primary-color: #00F;
-$primary-color-dark: #00A;
-$accent-color: #300;
+$danger-color: #F00;
+$primary-color: #155EA2;
+$primary-color-dark: #14508F;
+$accent-color: #6F4C5E;
+$light-accent-color: #FED89D;
+
+$header-color: #aaa;
+
+$nav-background-color: #555;
+$nav-title-color: $primary-color;
+$nav-text-color: $light-background-color;
+$nav-item-selected: $primary-color;
+$nav-item-hover: #aaa;
 
 $login-form-size: 500px;
