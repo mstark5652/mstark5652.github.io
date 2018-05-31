@@ -32,15 +32,18 @@ module.exports = {
         test: /\.s[ac]ss$/,
         use: [
           {
-            loader: "css-loader", // translates CSS into CommonJS
+            loader: 'file-loader',
             options: {
-              sourceMap: true
-            }
+              name: 'bundle.css',
+            },
           },
+          { loader: 'extract-loader' },
+          { loader: 'css-loader' },
           {
-            loader: "sass-loader", // compiles Sass to CSS
+            loader: 'sass-loader',
             options: {
-              sourceMap: true
+              module: true,
+              includePaths: ['./node_modules'],
             }
           }
         ]
@@ -58,7 +61,7 @@ module.exports = {
         loaders: [
           'file-loader?hash=sha512&digest=hex&name=img/[hash].[ext]',
           'image-webpack-loader?bypassOnDebug&optipng.optimizationLevel=7&gifsicle.interlaced=false',
-        ],
+        ]
       },
       // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
       { enforce: "pre", test: /\.js$/, loader: "source-map-loader" }

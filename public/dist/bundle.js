@@ -119,6 +119,7 @@ exports.About = About;
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = __webpack_require__(/*! react */ "react");
 const Navigation_1 = __webpack_require__(/*! ./Navigation */ "./src/components/Navigation.tsx");
+const style = __webpack_require__(/*! ../style/main.scss */ "./src/style/main.scss");
 class AppPage extends React.Component {
     constructor(props) {
         super(props);
@@ -137,8 +138,12 @@ class AppPage extends React.Component {
             return React.createElement("p", null, "AppPage has errors.");
         }
         return (React.createElement("main", null,
+            React.createElement("div", { className: "header" },
+                React.createElement("h2", null, "Michael Stark"),
+                React.createElement("br", null),
+                React.createElement("p", null, "Software Engineer")),
             React.createElement(Navigation_1.Navigation, null),
-            this.props.children));
+            React.createElement("div", { className: "content" }, this.props.children)));
     }
 }
 exports.AppPage = AppPage;
@@ -223,16 +228,28 @@ exports.IndexPage = IndexPage;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = __webpack_require__(/*! react */ "react");
+const githubLogo = "public/dist/" + __webpack_require__(/*! ../img/github.svg */ "./src/img/github.svg");
 class Navigation extends React.Component {
+    componentDidMount() {
+        window.onscroll = function () { stickyNav(); };
+        let navbar = document.getElementById("navbar");
+        let sticky = navbar.offsetTop;
+        function stickyNav() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky");
+            }
+            else {
+                navbar.classList.remove("sticky");
+            }
+        }
+    }
     render() {
-        return (React.createElement("header", null,
-            React.createElement("nav", { className: "main-nav" },
-                React.createElement("span", { className: "nav-title nav-item" }, "Michael Stark"),
-                React.createElement("a", { href: "/", className: "nav-item active" }, "Home"),
-                React.createElement("a", { href: "/about", className: "nav-item" }, "About"),
-                React.createElement("a", { href: "https://github.com/mstark5652", className: "nav-item nav-right" },
-                    React.createElement("svg", { height: "32", viewBox: "0 0 16 16", version: "1.1", width: "32", "aria-hidden": "true" },
-                        React.createElement("path", { fillRule: "evenodd", d: "M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z" }))))));
+        return (React.createElement("div", { id: "navbar" },
+            React.createElement("a", { className: "active", href: "javascript:void(0)" }, "Home"),
+            React.createElement("a", { href: "/about" }, "About"),
+            React.createElement("a", { className: "nav-right logo", href: "https://github.com/mstark5652" },
+                React.createElement("img", { src: githubLogo, alt: "Github logo" })),
+            React.createElement("a", { className: "nav-right name", href: "#" }, "Michael Stark")));
     }
 }
 exports.Navigation = Navigation;
@@ -259,12 +276,24 @@ class SiteRouter extends React.Component {
     render() {
         return (React.createElement(react_router_dom_1.Switch, null,
             React.createElement(react_router_dom_1.Route, { exact: true, path: "/", component: IndexPage_1.IndexPage }),
+            React.createElement(react_router_dom_1.Route, { exact: true, path: "/index.html", component: IndexPage_1.IndexPage }),
             React.createElement(react_router_dom_1.Route, { path: "/about", component: About_1.About }),
             React.createElement(react_router_dom_1.Route, { path: "*", component: BaseComponents_1.NotFoundPage })));
     }
 }
 exports.SiteRouter = SiteRouter;
 
+
+/***/ }),
+
+/***/ "./src/img/github.svg":
+/*!****************************!*\
+  !*** ./src/img/github.svg ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "img/418d2800f73da34ff0d5fe636f021f4e.svg";
 
 /***/ }),
 
@@ -287,6 +316,17 @@ ReactDOM.render(React.createElement(react_router_dom_1.BrowserRouter, null,
     React.createElement(AppPage_1.AppPage, null,
         React.createElement(SiteRouter_1.SiteRouter, null))), document.getElementById("main"));
 
+
+/***/ }),
+
+/***/ "./src/style/main.scss":
+/*!*****************************!*\
+  !*** ./src/style/main.scss ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "bundle.css";
 
 /***/ }),
 

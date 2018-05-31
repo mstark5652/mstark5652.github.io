@@ -12,6 +12,7 @@ export class SiteRouter extends React.Component {
     return (
         <Switch>
             <Route exact path="/" component={IndexPage} />
+            <Route exact path="/index.html" component={IndexPage} />
             <Route path="/about" component={About} />
             <Route path="*" component={NotFoundPage} />
         </Switch>

@@ -3,6 +3,8 @@ import * as React from "react"
 
 import { Navigation } from "./Navigation"
 
+const style = require("../style/main.scss")
+
 interface AppState { hasError: boolean; }
 
 export class AppPage extends React.Component<object, AppState> {
@@ -25,8 +27,15 @@ export class AppPage extends React.Component<object, AppState> {
     }
     return (
       <main>
+        <div className="header">
+          <h2>Michael Stark</h2>
+          <br />
+          <p>Software Engineer</p>
+        </div>
         <Navigation />
-        {this.props.children}
+        <div className="content">
+          {this.props.children}
+        </div>
       </main>
     );
   }

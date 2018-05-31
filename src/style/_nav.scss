@@ -1,0 +1,69 @@
+
+.header {
+  background-color: $light-background-color;
+  padding: 30px;
+  text-align: center;
+}
+
+#navbar {
+  overflow: hidden;
+  background-color: $nav-background-color;
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: $nav-text-color;
+  text-align: center;
+  padding: 19px 20px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#navbar a:hover {
+  background-color: $nav-item-hover;
+  color: $nav-text-color;
+}
+
+#navbar a.active {
+  background-color: $primary-color-dark;
+  color: $nav-text-color;
+}
+#navbar .logo {
+  padding: 10px 14px;
+}
+#navbar a.logo:hover {
+  background-color: $nav-background-color;
+  color: $nav-text-color;
+}
+#navbar .nav-right {
+  float: right;
+}
+#navbar a.name {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+#navbar a.name:hover {
+  background-color: $nav-background-color;
+  color: $nav-text-color;
+}
+#navbar.sticky a.name {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+.content {
+  padding: 16px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
