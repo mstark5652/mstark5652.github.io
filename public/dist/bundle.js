@@ -99,7 +99,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const React = __webpack_require__(/*! react */ "react");
 class About extends React.Component {
     render() {
-        return (React.createElement("div", { className: "container" }));
+        return (React.createElement("div", { className: "about-container" },
+            React.createElement("div", { id: "about", className: "anchor" }),
+            React.createElement("h2", null, "About")));
     }
 }
 exports.About = About;
@@ -151,51 +153,6 @@ exports.AppPage = AppPage;
 
 /***/ }),
 
-/***/ "./src/components/BaseComponents.tsx":
-/*!*******************************************!*\
-  !*** ./src/components/BaseComponents.tsx ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = __webpack_require__(/*! react */ "react");
-const react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "react-router-dom");
-class Layout extends React.Component {
-    render() {
-        return (React.createElement("div", { className: "app-container" },
-            React.createElement("div", { className: "app-content" }, this.props.children)));
-    }
-}
-exports.Layout = Layout;
-// Error Pages
-class NotFoundPage extends React.Component {
-    render() {
-        return (React.createElement("div", { className: "not-found" },
-            React.createElement("h2", null, "404"),
-            React.createElement("h4", null, "Page not found!"),
-            React.createElement("br", null),
-            React.createElement("br", null),
-            React.createElement(react_router_dom_1.Link, { to: "/" }, "Return home")));
-    }
-}
-exports.NotFoundPage = NotFoundPage;
-class ErrorPage extends React.Component {
-    render() {
-        return (React.createElement("div", { className: "error-page" },
-            React.createElement("h4", null, "Something went wrong! Please try again later."),
-            React.createElement("br", null),
-            React.createElement("br", null),
-            React.createElement(react_router_dom_1.Link, { to: "/" }, "Return home")));
-    }
-}
-exports.ErrorPage = ErrorPage;
-
-
-/***/ }),
-
 /***/ "./src/components/IndexPage.tsx":
 /*!**************************************!*\
   !*** ./src/components/IndexPage.tsx ***!
@@ -207,9 +164,12 @@ exports.ErrorPage = ErrorPage;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = __webpack_require__(/*! react */ "react");
+const About_1 = __webpack_require__(/*! ./About */ "./src/components/About.tsx");
 class IndexPage extends React.Component {
     render() {
-        return (React.createElement("div", { className: "container" }));
+        return (React.createElement("div", { className: "container" },
+            React.createElement("h2", null, "Hello"),
+            React.createElement(About_1.About, null)));
     }
 }
 exports.IndexPage = IndexPage;
@@ -245,8 +205,8 @@ class Navigation extends React.Component {
     }
     render() {
         return (React.createElement("div", { id: "navbar" },
-            React.createElement("a", { className: "active", href: "javascript:void(0)" }, "Home"),
-            React.createElement("a", { href: "/about" }, "About"),
+            React.createElement("a", { className: "active", href: "#" }, "Home"),
+            React.createElement("a", { href: "#about" }, "About"),
             React.createElement("a", { className: "nav-right logo", href: "https://github.com/mstark5652" },
                 React.createElement("img", { src: githubLogo, alt: "Github logo" })),
             React.createElement("a", { className: "nav-right name", href: "#" }, "Michael Stark")));
@@ -270,15 +230,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const React = __webpack_require__(/*! react */ "react");
 const react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "react-router-dom");
 const IndexPage_1 = __webpack_require__(/*! ./IndexPage */ "./src/components/IndexPage.tsx");
-const About_1 = __webpack_require__(/*! ./About */ "./src/components/About.tsx");
-const BaseComponents_1 = __webpack_require__(/*! ./BaseComponents */ "./src/components/BaseComponents.tsx");
 class SiteRouter extends React.Component {
     render() {
-        return (React.createElement(react_router_dom_1.Switch, null,
-            React.createElement(react_router_dom_1.Route, { exact: true, path: "/", component: IndexPage_1.IndexPage }),
-            React.createElement(react_router_dom_1.Route, { exact: true, path: "/index.html", component: IndexPage_1.IndexPage }),
-            React.createElement(react_router_dom_1.Route, { path: "/about", component: About_1.About }),
-            React.createElement(react_router_dom_1.Route, { path: "*", component: BaseComponents_1.NotFoundPage })));
+        return (React.createElement(react_router_dom_1.BrowserRouter, null,
+            React.createElement("div", null,
+                React.createElement(react_router_dom_1.Route, { path: "*", component: IndexPage_1.IndexPage }))));
     }
 }
 exports.SiteRouter = SiteRouter;

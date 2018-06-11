@@ -23,7 +23,7 @@ export class AppPage extends React.Component<object, AppState> {
   }
   render() {
     if (this.state.hasError) {
-      return <p>AppPage has errors.</p>
+      return (<p>AppPage has errors.</p>)
     }
     return (
       <main>
@@ -31,12 +31,13 @@ export class AppPage extends React.Component<object, AppState> {
           <h2>Michael Stark</h2>
           <br />
           <p>Software Engineer</p>
+          <p></p>
         </div>
         <Navigation />
         <div className="content">
           {this.props.children}
         </div>
       </main>
-    );
+    )
   }
 }

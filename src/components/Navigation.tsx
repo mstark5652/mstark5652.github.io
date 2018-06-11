@@ -1,7 +1,5 @@
 
 import * as React from "react"
-import * as PropTypes from "prop-types"
-import * as classnames from "classnames"
 
 const githubLogo = "public/dist/" + require("../img/github.svg")
 
@@ -25,8 +23,8 @@ export class Navigation extends React.Component {
   render() {
     return (
       <div id="navbar">
-        <a className="active" href="javascript:void(0)">Home</a>
-        <a href="/about">About</a>
+        <a className="active" href="#">Home</a>
+        <a href="#about">About</a>
         <a className="nav-right logo" href="https://github.com/mstark5652"><img src={githubLogo} alt="Github logo" /></a>
         <a className="nav-right name" href="#">Michael Stark</a>
       </div>
