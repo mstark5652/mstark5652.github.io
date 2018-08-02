@@ -97,14 +97,14 @@
 
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = __webpack_require__(/*! react */ "react");
-class About extends React.Component {
+class AboutView extends React.Component {
     render() {
         return (React.createElement("div", { className: "about-container" },
             React.createElement("div", { id: "about", className: "anchor" }),
             React.createElement("h2", null, "About")));
     }
 }
-exports.About = About;
+exports.AboutView = AboutView;
 
 
 /***/ }),
@@ -137,13 +137,14 @@ class AppPage extends React.Component {
     }
     render() {
         if (this.state.hasError) {
-            return React.createElement("p", null, "AppPage has errors.");
+            return (React.createElement("p", null, "AppPage has errors."));
         }
         return (React.createElement("main", null,
             React.createElement("div", { className: "header" },
                 React.createElement("h2", null, "Michael Stark"),
                 React.createElement("br", null),
-                React.createElement("p", null, "Software Engineer")),
+                React.createElement("p", null, "Software Engineer"),
+                React.createElement("p", null)),
             React.createElement(Navigation_1.Navigation, null),
             React.createElement("div", { className: "content" }, this.props.children)));
     }
@@ -165,11 +166,13 @@ exports.AppPage = AppPage;
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = __webpack_require__(/*! react */ "react");
 const About_1 = __webpack_require__(/*! ./About */ "./src/components/About.tsx");
+const Projects_1 = __webpack_require__(/*! ./Projects */ "./src/components/Projects.tsx");
 class IndexPage extends React.Component {
     render() {
         return (React.createElement("div", { className: "container" },
             React.createElement("h2", null, "Hello"),
-            React.createElement(About_1.About, null)));
+            React.createElement(About_1.AboutView, null),
+            React.createElement(Projects_1.ProjectsView, null)));
     }
 }
 exports.IndexPage = IndexPage;
@@ -207,12 +210,36 @@ class Navigation extends React.Component {
         return (React.createElement("div", { id: "navbar" },
             React.createElement("a", { className: "active", href: "#" }, "Home"),
             React.createElement("a", { href: "#about" }, "About"),
+            React.createElement("a", { href: "#projects" }, "Projects"),
             React.createElement("a", { className: "nav-right logo", href: "https://github.com/mstark5652" },
                 React.createElement("img", { src: githubLogo, alt: "Github logo" })),
             React.createElement("a", { className: "nav-right name", href: "#" }, "Michael Stark")));
     }
 }
 exports.Navigation = Navigation;
+
+
+/***/ }),
+
+/***/ "./src/components/Projects.tsx":
+/*!*************************************!*\
+  !*** ./src/components/Projects.tsx ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = __webpack_require__(/*! react */ "react");
+class ProjectsView extends React.Component {
+    render() {
+        return (React.createElement("div", { className: "projects-container" },
+            React.createElement("div", { id: "projects", className: "anchor" }),
+            React.createElement("h2", null, "Projects")));
+    }
+}
+exports.ProjectsView = ProjectsView;
 
 
 /***/ }),

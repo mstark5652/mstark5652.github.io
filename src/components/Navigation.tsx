@@ -25,6 +25,7 @@ export class Navigation extends React.Component {
       <div id="navbar">
         <a className="active" href="#">Home</a>
         <a href="#about">About</a>
+        <a href="#projects">Projects</a>
         <a className="nav-right logo" href="https://github.com/mstark5652"><img src={githubLogo} alt="Github logo" /></a>
         <a className="nav-right name" href="#">Michael Stark</a>
       </div>
