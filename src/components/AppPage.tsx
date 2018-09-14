@@ -5,6 +5,8 @@ import { Navigation } from "./Navigation"
 
 const style = require("../style/main.scss")
 
+const profile = "public/dist/" + require("../img/me.jpeg")
+
 interface AppState { hasError: boolean; }
 
 export class AppPage extends React.Component<object, AppState> {
@@ -31,7 +33,8 @@ export class AppPage extends React.Component<object, AppState> {
           <h2>Michael Stark</h2>
           <br />
           <p>Software Engineer</p>
-          <p></p>
+          <br />
+          <img className="main-profile" src={profile} alt="Profile Picture" title="Profile Picture" />
         </div>
         <Navigation />
         <div className="content">

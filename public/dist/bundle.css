@@ -147,7 +147,7 @@ div.modal-dialog {
       -webkit-border-bottom-left-radius: 5px;
       -webkit-border-top-left-radius: 5px;
       -webkit-border-top-right-radius: 5px;
-      background-color: #14508F;
+      background-color: #1D6868;
       color: #fff;
       margin-top: 20px;
       margin: 0;
@@ -194,21 +194,50 @@ div.modal-dialog {
     font-weight: bold; } }
 
 .home {
-  background-color: #FED89D;
+  background-color: #F7D065;
   width: 100%;
   height: 100%; }
 
-.home-main {
-  width: 100%;
-  height: 100%;
-  background: url("/static/dist/ssets/gluviva-bkg.png");
-  background-size: cover;
-  min-width: 1247px;
-  min-height: 900px; }
+.float-right {
+  float: right; }
+
+.float-left {
+  float: left; }
+
+a.clean-link {
+  text-decoration: none;
+  color: #FD7A09; }
+
+a.clean-link:hover {
+  text-decoration: none;
+  color: #4B4A46; }
+
+a.clean-link:visited {
+  text-decoration: none;
+  color: #FD7A09; }
+
+.column {
+  float: left;
+  width: 33.33%; }
+  .column.double {
+    width: 66.6%; }
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%; } }
 
 .header {
   background-color: #eee;
   padding: 30px;
+  text-align: center; }
+
+img.main-profile {
+  max-height: 150px;
   text-align: center; }
 
 #navbar {
@@ -229,11 +258,15 @@ div.modal-dialog {
   color: #eee; }
 
 #navbar a.active {
-  background-color: #14508F;
+  background-color: #4AD1D1;
   color: #eee; }
 
 #navbar .logo {
   padding: 10px 14px; }
+  #navbar .logo.linkedin {
+    padding-top: 16px;
+    padding-left: 20px;
+    padding-bottom: 6px; }
 
 #navbar a.logo:hover {
   background-color: #555;
@@ -272,5 +305,98 @@ div.modal-dialog {
   top: -70px;
   visibility: hidden; }
 
+.content {
+  margin-left: 5%;
+  margin-right: 5%; }
+
+.section-title {
+  font-size: 26px;
+  color: #4AD1D1; }
+
+.projects-container {
+  width: 100%; }
+
+.empty-block {
+  height: 200px; }
+
+@media screen and (max-width: 600px) {
+  .empty-block {
+    height: 20px; } }
+
+.hack-container {
+  width: 100%;
+  height: 250px;
+  padding: 10px;
+  border: 3px solid #F7D065;
+  border-radius: 5px; }
+  .hack-container .title {
+    font-size: 24px;
+    color: #333; }
+  .hack-container video {
+    border: none;
+    overflow: hidden;
+    margin: 0px;
+    max-height: 230px; }
+  .hack-container img {
+    display: block;
+    margin: 10px;
+    max-height: 200px; }
+
+@media screen and (max-width: 600px) {
+  .hack-container {
+    height: 750px; } }
+
+.mix-container {
+  width: 100%;
+  height: 250px;
+  padding: 10px;
+  border: 3px solid #F7D065;
+  border-radius: 5px; }
+  .mix-container .title {
+    font-size: 24px;
+    color: #333; }
+  .mix-container .mix-video {
+    border: none;
+    overflow: hidden;
+    background-color: #333;
+    margin: 0px;
+    max-height: 230px; }
+
+@media screen and (max-width: 600px) {
+  .mix-container {
+    height: 750px; } }
+
+.cbr-container {
+  width: 100%;
+  height: 250px;
+  padding: 10px;
+  border: 3px solid #F7D065;
+  border-radius: 5px; }
+  .cbr-container .title {
+    font-size: 24px;
+    color: #333; }
+  .cbr-container img.cbr-logo {
+    width: 20%;
+    margin-top: 10px;
+    min-width: 250px; }
+  .cbr-container .cbr-screenshots {
+    float: right; }
+    .cbr-container .cbr-screenshots img {
+      max-height: 250px;
+      margin-top: -55px;
+      margin-left: 5px;
+      margin-right: 5px; }
+  .cbr-container .platform-container .app-badge {
+    max-width: 200px; }
+    .cbr-container .platform-container .app-badge img {
+      width: 150px; }
+
+@media screen and (max-width: 600px) {
+  .cbr-container {
+    height: 750px; } }
+
 .about-container {
-  background-color: #eee; }
+  width: 100%; }
+
+.about-desc {
+  padding: 10px; }

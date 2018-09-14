@@ -5,6 +5,11 @@
   text-align: center;
 }
 
+img.main-profile {
+  max-height: 150px;
+  text-align: center;
+}
+
 #navbar {
   overflow: hidden;
   background-color: $nav-background-color;
@@ -26,11 +31,17 @@
 }
 
 #navbar a.active {
-  background-color: $primary-color-dark;
+  background-color: $primary-color;
   color: $nav-text-color;
 }
 #navbar .logo {
   padding: 10px 14px;
+
+  &.linkedin {
+    padding-top: 16px;
+    padding-left: 20px;
+    padding-bottom: 6px;
+  }
 }
 #navbar a.logo:hover {
   background-color: $nav-background-color;
