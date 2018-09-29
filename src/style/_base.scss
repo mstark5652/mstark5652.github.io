@@ -18,15 +18,15 @@ a.clean-link {
     color: $accent-color;
 }
 
+a.clean-link:visited {
+    text-decoration: none;
+    color: $accent-color;
+}
 a.clean-link:hover {
     text-decoration: none;
     color: $header-color;
 }
 
-a.clean-link:visited {
-    text-decoration: none;
-    color: $accent-color;
-}
 
 .column {
     float: left;

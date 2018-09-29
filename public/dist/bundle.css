@@ -212,13 +212,13 @@ a.clean-link {
   text-decoration: none;
   color: #FD7A09; }
 
-a.clean-link:hover {
-  text-decoration: none;
-  color: #4B4A46; }
-
 a.clean-link:visited {
   text-decoration: none;
   color: #FD7A09; }
+
+a.clean-link:hover {
+  text-decoration: none;
+  color: #4B4A46; }
 
 .column {
   float: left;
