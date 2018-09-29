@@ -33,7 +33,7 @@ img.main-profile {
 
 #navbar a.active {
   background-color: $primary-color;
-  color: $dark-text-color;
+  color: $nav-background-color;
 }
 #navbar .logo {
   padding: 10px 14px;
@@ -71,6 +71,7 @@ img.main-profile {
   padding-bottom: 16px;
 }
 
+
 .sticky {
   position: fixed;
   top: 0;
@@ -79,6 +80,7 @@ img.main-profile {
 
 .sticky + .content {
   padding-top: 60px;
+  animation: ease-in-out;
 }
 
 .anchor {

@@ -21,7 +21,7 @@ export class Navigation extends React.Component<object, NavState> {
     window.onscroll = function (): void { stickyNav() };
 
     let navbar = document.getElementById("navbar") as HTMLElement;
-    let sticky = navbar.offsetTop;
+    let sticky = navbar.offsetTop + 90;
 
     function stickyNav(): void {
       if (window.pageYOffset >= sticky) {

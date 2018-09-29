@@ -264,7 +264,7 @@ img.main-profile {
 
 #navbar a.active {
   background-color: #a9fff7;
-  color: #333; }
+  color: #555; }
 
 #navbar .logo {
   padding: 10px 14px; }
@@ -303,7 +303,8 @@ img.main-profile {
   width: 100%; }
 
 .sticky + .content {
-  padding-top: 60px; }
+  padding-top: 60px;
+  animation: ease-in-out; }
 
 .anchor {
   display: block;
