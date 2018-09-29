@@ -1,8 +1,9 @@
 
 .header {
-  background-color: $light-background-color;
+  background-color: $primary-color-dark;
   padding: 30px;
   text-align: center;
+  color: $light-text-color;
 }
 
 img.main-profile {
@@ -20,7 +21,7 @@ img.main-profile {
   display: block;
   color: $nav-text-color;
   text-align: center;
-  padding: 19px 20px;
+  padding: 20px 20px;
   text-decoration: none;
   font-size: 17px;
 }
@@ -32,7 +33,7 @@ img.main-profile {
 
 #navbar a.active {
   background-color: $primary-color;
-  color: $nav-text-color;
+  color: $dark-text-color;
 }
 #navbar .logo {
   padding: 10px 14px;
@@ -66,7 +67,8 @@ img.main-profile {
 
 
 .content {
-  padding: 16px;
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
 
 .sticky {

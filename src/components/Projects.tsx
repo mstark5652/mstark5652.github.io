@@ -32,16 +32,18 @@ export class ProjectsView extends React.Component {
 class HackMidwestView extends React.Component {
   render() {
     return (
-      <div className="hack-container">
-        <p className="title float-right">2018 HackMidwest Winner!</p>
-        <br />
-        <div className="row">
-          <div className="column">
-            <video playsInline crossOrigin="anonymous" src="https://s3.us-east-2.amazonaws.com/neighborhood-static/media/intro.mp4" ></video>
-          </div>
-          <div className="column double">
-            <img src={hackGroup} title="Hack Midwest Group" />
-            <a className="clean-link float-right" target="_blank" href="https://www.intouchsol.com/blog/intouch-team-wins-big-hack-midwest-competition/" title="Hack Midwest Article">Article</a>
+      <div className="back-drop">
+        <div className="hack-container">
+          <p className="title float-right">2018 HackMidwest Winner!</p>
+          <br />
+          <div className="row">
+            <div className="column">
+              <video playsInline crossOrigin="anonymous" src="https://s3.us-east-2.amazonaws.com/neighborhood-static/media/intro.mp4" ></video>
+            </div>
+            <div className="column double">
+              <img src={hackGroup} title="Hack Midwest Group" />
+              <a className="clean-link float-right" target="_blank" href="https://www.intouchsol.com/blog/intouch-team-wins-big-hack-midwest-competition/" title="Hack Midwest Article">Article</a>
+            </div>
           </div>
         </div>
       </div>
@@ -77,30 +79,32 @@ class MixologistView extends React.Component {
 class CBRView extends React.Component {
   render() {
     return (
-      <div className="cbr-container">
-        <a href="https://comicbookrealm.com" target="_blank">
-          <img className="cbr-logo" src={cbrLogo} alt="Comic Book Realm" />
-        </a>
-        <br />
-        <div className="row">
-          <div className="column">
-            <p className="title">Comic Book Realm Mobile Apps</p>
-          </div>
-          <div className="column platform-container">
-            <div className="app-badge">
-              <a href="https://play.google.com/store/apps/details?id=com.comicbookrealmgp.cbr" target="_blank">
-                <img src={droidAppStore} alt="CBR App on Android" title="CBR App on Android" />
-              </a>
+      <div className="back-drop">
+        <div className="cbr-container">
+          <a href="https://comicbookrealm.com" target="_blank">
+            <img className="cbr-logo" src={cbrLogo} alt="Comic Book Realm" />
+          </a>
+          <br />
+          <div className="row">
+            <div className="column">
+              <p className="title">Comic Book Realm Mobile Apps</p>
             </div>
-            <div className="app-badge">
-              <a href="https://itunes.apple.com/us/app/comicbookrealm/id1348310066" target="_blank">
-                <img src={iosAppStore} alt="CBR App on iOS" title="CBR App on iOS" />
-              </a>
+            <div className="column platform-container">
+              <div className="app-badge">
+                <a href="https://play.google.com/store/apps/details?id=com.comicbookrealmgp.cbr" target="_blank">
+                  <img src={droidAppStore} alt="CBR App on Android" title="CBR App on Android" />
+                </a>
+              </div>
+              <div className="app-badge">
+                <a href="https://itunes.apple.com/us/app/comicbookrealm/id1348310066" target="_blank">
+                  <img src={iosAppStore} alt="CBR App on iOS" title="CBR App on iOS" />
+                </a>
+              </div>
             </div>
-          </div>
-          <div className="column cbr-screenshots">
-            <img src={cbrSearch} className="float-left" alt="CBR Search Feature Screenshot" />
-            <img src={cbrMenu} className="float-left" alt="CBR Search Feature Screenshot" />
+            <div className="column cbr-screenshots">
+              <img src={cbrSearch} className="float-left" alt="CBR Search Feature Screenshot" />
+              <img src={cbrMenu} className="float-left" alt="CBR Search Feature Screenshot" />
+            </div>
           </div>
         </div>
       </div>

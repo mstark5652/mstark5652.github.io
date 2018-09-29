@@ -1,0 +1,118 @@
+
+.projects-container {
+  width: 100%;
+
+  .section-title {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+}
+
+.back-drop {
+  width: 80%;
+  padding-top: 10px;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 10px;
+  background-color: $light-background-color;
+}
+
+.hack-container {
+  width: 100%;
+  height: 250px;
+  padding: 10px;
+  
+  .title {
+    font-size: 24px;
+    color: $dark-text-color;
+  }
+  
+  video {
+    border:none;
+    overflow:hidden;
+    margin: 0px;
+    max-height: 230px;
+  }
+
+  img {
+    display: block;
+    margin: 10px;
+    max-height: 200px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .hack-container  {
+    height: 750px;
+  }
+}
+
+.mix-container {
+  width: 80%;
+  padding-left: 10%;
+  padding-right: 10%;
+  height: 250px;
+
+  .title {
+    font-size: 24px;
+    color: $dark-text-color;
+  }
+
+  .mix-video {
+    border:none;
+    overflow:hidden;
+    background-color: $dark-text-color;
+    margin: 0px;
+    max-height: 230px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .mix-container  {
+    height: 750px;
+  }
+}
+
+.cbr-container {
+  width: 100%;
+  height: 250px;
+  padding: 10px;
+
+  .title {
+    font-size: 24px;
+    color: $dark-text-color;
+  }
+
+  img.cbr-logo {
+    width: 20%;
+    margin-top: 10px;
+    min-width: 250px;
+  }
+
+  .cbr-screenshots {
+    float: right;
+    img {
+      max-height: 250px;
+      margin-top: -55px;
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+  }
+
+  .platform-container {
+    .app-badge {
+      max-width: 200px;
+
+      img {
+        width: 150px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .cbr-container  {
+    height: 750px;
+  }
+}
+
+

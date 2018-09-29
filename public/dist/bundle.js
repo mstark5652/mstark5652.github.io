@@ -276,15 +276,16 @@ class ProjectsView extends React.Component {
 exports.ProjectsView = ProjectsView;
 class HackMidwestView extends React.Component {
     render() {
-        return (React.createElement("div", { className: "hack-container" },
-            React.createElement("p", { className: "title float-right" }, "2018 HackMidwest Winner!"),
-            React.createElement("br", null),
-            React.createElement("div", { className: "row" },
-                React.createElement("div", { className: "column" },
-                    React.createElement("video", { playsInline: true, crossOrigin: "anonymous", src: "https://s3.us-east-2.amazonaws.com/neighborhood-static/media/intro.mp4" })),
-                React.createElement("div", { className: "column double" },
-                    React.createElement("img", { src: hackGroup, title: "Hack Midwest Group" }),
-                    React.createElement("a", { className: "clean-link float-right", target: "_blank", href: "https://www.intouchsol.com/blog/intouch-team-wins-big-hack-midwest-competition/", title: "Hack Midwest Article" }, "Article")))));
+        return (React.createElement("div", { className: "back-drop" },
+            React.createElement("div", { className: "hack-container" },
+                React.createElement("p", { className: "title float-right" }, "2018 HackMidwest Winner!"),
+                React.createElement("br", null),
+                React.createElement("div", { className: "row" },
+                    React.createElement("div", { className: "column" },
+                        React.createElement("video", { playsInline: true, crossOrigin: "anonymous", src: "https://s3.us-east-2.amazonaws.com/neighborhood-static/media/intro.mp4" })),
+                    React.createElement("div", { className: "column double" },
+                        React.createElement("img", { src: hackGroup, title: "Hack Midwest Group" }),
+                        React.createElement("a", { className: "clean-link float-right", target: "_blank", href: "https://www.intouchsol.com/blog/intouch-team-wins-big-hack-midwest-competition/", title: "Hack Midwest Article" }, "Article"))))));
     }
 }
 class MixologistView extends React.Component {
@@ -306,23 +307,24 @@ class MixologistView extends React.Component {
 }
 class CBRView extends React.Component {
     render() {
-        return (React.createElement("div", { className: "cbr-container" },
-            React.createElement("a", { href: "https://comicbookrealm.com", target: "_blank" },
-                React.createElement("img", { className: "cbr-logo", src: cbrLogo, alt: "Comic Book Realm" })),
-            React.createElement("br", null),
-            React.createElement("div", { className: "row" },
-                React.createElement("div", { className: "column" },
-                    React.createElement("p", { className: "title" }, "Comic Book Realm Mobile Apps")),
-                React.createElement("div", { className: "column platform-container" },
-                    React.createElement("div", { className: "app-badge" },
-                        React.createElement("a", { href: "https://play.google.com/store/apps/details?id=com.comicbookrealmgp.cbr", target: "_blank" },
-                            React.createElement("img", { src: droidAppStore, alt: "CBR App on Android", title: "CBR App on Android" }))),
-                    React.createElement("div", { className: "app-badge" },
-                        React.createElement("a", { href: "https://itunes.apple.com/us/app/comicbookrealm/id1348310066", target: "_blank" },
-                            React.createElement("img", { src: iosAppStore, alt: "CBR App on iOS", title: "CBR App on iOS" })))),
-                React.createElement("div", { className: "column cbr-screenshots" },
-                    React.createElement("img", { src: cbrSearch, className: "float-left", alt: "CBR Search Feature Screenshot" }),
-                    React.createElement("img", { src: cbrMenu, className: "float-left", alt: "CBR Search Feature Screenshot" })))));
+        return (React.createElement("div", { className: "back-drop" },
+            React.createElement("div", { className: "cbr-container" },
+                React.createElement("a", { href: "https://comicbookrealm.com", target: "_blank" },
+                    React.createElement("img", { className: "cbr-logo", src: cbrLogo, alt: "Comic Book Realm" })),
+                React.createElement("br", null),
+                React.createElement("div", { className: "row" },
+                    React.createElement("div", { className: "column" },
+                        React.createElement("p", { className: "title" }, "Comic Book Realm Mobile Apps")),
+                    React.createElement("div", { className: "column platform-container" },
+                        React.createElement("div", { className: "app-badge" },
+                            React.createElement("a", { href: "https://play.google.com/store/apps/details?id=com.comicbookrealmgp.cbr", target: "_blank" },
+                                React.createElement("img", { src: droidAppStore, alt: "CBR App on Android", title: "CBR App on Android" }))),
+                        React.createElement("div", { className: "app-badge" },
+                            React.createElement("a", { href: "https://itunes.apple.com/us/app/comicbookrealm/id1348310066", target: "_blank" },
+                                React.createElement("img", { src: iosAppStore, alt: "CBR App on iOS", title: "CBR App on iOS" })))),
+                    React.createElement("div", { className: "column cbr-screenshots" },
+                        React.createElement("img", { src: cbrSearch, className: "float-left", alt: "CBR Search Feature Screenshot" }),
+                        React.createElement("img", { src: cbrMenu, className: "float-left", alt: "CBR Search Feature Screenshot" }))))));
     }
 }
 
@@ -405,7 +407,7 @@ module.exports = __webpack_require__.p + "img/23e944bc1045d489cc94dc333a9e1845.p
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "img/418d2800f73da34ff0d5fe636f021f4e.svg";
+module.exports = __webpack_require__.p + "img/c71ad495c9e20e65bc623b8c44b49a48.svg";
 
 /***/ }),
 
@@ -438,7 +440,7 @@ module.exports = __webpack_require__.p + "img/44320286fd8f6f7fe0cb137feda8ec2f.p
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "img/48e866390077ea52e7c5244fc08fb72e.svg";
+module.exports = __webpack_require__.p + "img/16b60803a410db662b271eb53806f55c.svg";
 
 /***/ }),
 
