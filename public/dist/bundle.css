@@ -240,6 +240,8 @@ a.clean-link:hover {
   padding: 30px;
   text-align: center;
   color: #fff; }
+  .header .header-name {
+    font-size: 20px; }
 
 img.main-profile {
   max-height: 150px;

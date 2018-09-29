@@ -145,7 +145,7 @@ class AppPage extends React.Component {
         }
         return (React.createElement("main", null,
             React.createElement("div", { className: "header" },
-                React.createElement("h2", null, "Michael Stark"),
+                React.createElement("p", { className: "header-name" }, "Michael Stark"),
                 React.createElement("br", null),
                 React.createElement("p", null, "Software Engineer"),
                 React.createElement("br", null),

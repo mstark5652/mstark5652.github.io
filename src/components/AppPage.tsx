@@ -30,7 +30,7 @@ export class AppPage extends React.Component<object, AppState> {
     return (
       <main>
         <div className="header">
-          <h2>Michael Stark</h2>
+          <p className="header-name">Michael Stark</p>
           <br />
           <p>Software Engineer</p>
           <br />
