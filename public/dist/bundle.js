@@ -282,7 +282,7 @@ class HackMidwestView extends React.Component {
                 React.createElement("br", null),
                 React.createElement("div", { className: "row" },
                     React.createElement("div", { className: "column" },
-                        React.createElement("video", { playsInline: true, loop: true, src: "https://s3.us-east-2.amazonaws.com/neighborhood-static/media/intro.mp4", typeof: "video/mp4" })),
+                        React.createElement("video", { playsInline: true, loop: true, controls: true, autoPlay: true, src: "https://s3.us-east-2.amazonaws.com/neighborhood-static/media/intro.mp4", typeof: "video/mp4" })),
                     React.createElement("div", { className: "column double" },
                         React.createElement("img", { src: hackGroup, title: "Hack Midwest Group" }),
                         React.createElement("a", { className: "clean-link float-right", target: "_blank", href: "https://www.intouchsol.com/blog/intouch-team-wins-big-hack-midwest-competition/", title: "Hack Midwest Article" }, "Article"))))));

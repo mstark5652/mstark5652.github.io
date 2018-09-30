@@ -38,7 +38,7 @@ class HackMidwestView extends React.Component {
           <br />
           <div className="row">
             <div className="column">
-              <video playsInline loop src="https://s3.us-east-2.amazonaws.com/neighborhood-static/media/intro.mp4" typeof="video/mp4"></video>
+              <video playsInline loop controls autoPlay src="https://s3.us-east-2.amazonaws.com/neighborhood-static/media/intro.mp4" typeof="video/mp4"></video>
             </div>
             <div className="column double">
               <img src={hackGroup} title="Hack Midwest Group" />
