@@ -369,7 +369,8 @@ img.main-profile {
     border: none;
     overflow: hidden;
     margin: 0px;
-    max-height: 230px; }
+    margin-top: -20px;
+    max-height: 270px; }
   .hack-container img {
     display: block;
     margin: 10px;
