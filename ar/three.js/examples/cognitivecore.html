@@ -186,10 +186,10 @@
                     prevTime = time;
                     
                     // rotate scene
-                    if (gltf.children[0].rotation.y >= 360) {
-                        gltf.children[0].rotation.y = 0;
+                    if (gltf.scene.children[0].rotation.y >= 360) {
+                        gltf.scene.children[0].rotation.y = 0;
                     } else {
-                        gltf.children[0].rotation.y += DEGREE_DELTA;
+                        gltf.scene.children[0].rotation.y += DEGREE_DELTA;
                     }
                 });
             }
