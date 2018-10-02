@@ -177,7 +177,7 @@
         // render the scene
         var prevTime = Date.now();
         
-        var DEGREE_DELTA = 1;
+        var DEGREE_DELTA = 0.001;
         onRenderFcts.push(function () {
             if (objs) {
                 objs.forEach(({ gltf, mixer }) => {
