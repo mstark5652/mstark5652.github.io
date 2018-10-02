@@ -116,12 +116,14 @@
             patternUrl: THREEx.ArToolkitContext.baseURL + '../data/data/patt.cognitivecore2'
             // patternUrl : THREEx.ArToolkitContext.baseURL + '../data/data/patt.kanji'
         })
+        artoolkitMarker.setAttribute('emitevents', 'true');
+        
         // event listener for when a marker is found
-        artoolkitMarker.addEventListener('becameVisible', function (event) {
+        artoolkitMarker.addEventListener('markerFound', function (event) {
             showCTA();
         })
         // not working currently
-        artoolkitMarker.addEventListener('becameUnVisible', function(event) {
+        artoolkitMarker.addEventListener('markerLost', function(event) {
             hideCTA();
         })
 
