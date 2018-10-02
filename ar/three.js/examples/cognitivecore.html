@@ -184,11 +184,13 @@
                     prevTime = time;
                     
                     // rotate scene
-                    if (gltf.rotation.y >= 360) {
-                        gltf.rotation.y = 0;    
-                    } else {
-                        gltf.rotation.y += DEGREE_DELTA;
-                    }
+                    console.log("gltf", gltf);
+                    console.log("mixer", mixer)
+                    // if (gltf.rotation.y >= 360) {
+                    //     gltf.rotation.y = 0;    
+                    // } else {
+                    //     gltf.rotation.y += DEGREE_DELTA;
+                    // }
                 });
             }
             renderer.render(scene, camera);
