@@ -203,6 +203,11 @@
                     let time = Date.now();
                     mixer.update((time - prevTime) * 0.001);
                     prevTime = time;
+                    if (document.querySelector("a-marker") 
+                            && document.querySelector("a-marker").object3D.visible == false) {
+                       // hide when marker not visible
+                       hideCTA();
+                    }
 
                     // rotate scene
                     if (gltf.scene.children[0].rotation.y >= 360) {
