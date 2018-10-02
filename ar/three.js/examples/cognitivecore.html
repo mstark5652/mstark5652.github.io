@@ -10,7 +10,7 @@
 
 <body style='margin : 0px; overflow: hidden; font-family: Arial; font-weight:bold; color: #b2d236;'>
     <div style='position: absolute; top: 5px; left:40px; width:100%; text-align: center; z-index: 1;'>
-        POINT YOUR CAMERA<br />at the AR code (a-marker)
+        POINT YOUR CAMERA<br />at the AR code (new events (became))
     </div>
     <div style='position: absolute; left: 80px; top: 0px; width:100%; z-index: 1;'>
         <img src="../../data/images/arintouch_50x50.png" height="48" width="48" />
@@ -117,11 +117,11 @@
             // patternUrl : THREEx.ArToolkitContext.baseURL + '../data/data/patt.kanji'
         })
         // event listener for when a marker is found
-        artoolkitMarker.addEventListener('markerFound', function (event) {
+        artoolkitMarker.addEventListener('becameVisible', function (event) {
             showCTA();
         })
         // not working currently
-        artoolkitMarker.addEventListener('markerLost', function(event) {
+        artoolkitMarker.addEventListener('becameUnVisible', function(event) {
             hideCTA();
         })
 
@@ -203,11 +203,11 @@
                     let time = Date.now();
                     mixer.update((time - prevTime) * 0.001);
                     prevTime = time;
-                    if (document.querySelector("a-marker") 
-                            && document.querySelector("a-marker").object3D.visible == false) {
-                       // hide when marker not visible
-                       hideCTA();
-                    }
+                    // if (document.querySelector("a-marker") 
+                    //         && document.querySelector("a-marker").object3D.visible == false) {
+                    //    // hide when marker not visible
+                    //    hideCTA();
+                    // }
 
                     // rotate scene
                     if (gltf.scene.children[0].rotation.y >= 360) {
