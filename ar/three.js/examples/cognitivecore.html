@@ -188,11 +188,11 @@
                     // rotate scene
                     var width = 30;
                     if (gltf.scene.children[0].rotation.y >= 360) {
-                        gltf.scene.children[0].translate(0, 0, 0.8);
+                        gltf.scene.children[0].translateY(0);
                         // gltf.scene.children[0].rotation.y = 0;
                     } else {
-                        var newRotation = gltf.scene.children[0].rotation.y + DEGREE_DELTA;
-                        gltf.scene.children[0].translate(0, newRotation, 0.8);
+                        var newY = gltf.scene.children[0].rotation.y + DEGREE_DELTA;
+                        gltf.scene.children[0].translateY(newY);
                     }
                 });
             }
