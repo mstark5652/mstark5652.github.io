@@ -157,6 +157,8 @@
                 gltf.scene.position.set(-1.25, 0, 0);
                 arWorldRoot.add(gltf.scene);
                 objs.push({ gltf, mixer });
+                console.log("gltf", gltf);
+                console.log("mixer", mixer);
             },
             // called while loading is progressing
             function (xhr) {
@@ -184,8 +186,6 @@
                     prevTime = time;
                     
                     // rotate scene
-                    console.log("gltf::", gltf);
-                    // console.log("mixer::", mixer)
                     if (gltf.scene.rotation.y >= 360) {
                         gltf.scene.rotation.y = 0;    
                     } else {
