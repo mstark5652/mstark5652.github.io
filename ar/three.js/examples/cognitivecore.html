@@ -151,6 +151,7 @@
                 for (const anim of gltf.animations) {
                     mixer.clipAction(anim).play();
                 }
+                window.gltf = gltf;
                 // settings in `sceneList`
                 gltf.scene.scale.set(10, 10, 10);
                 //gltf.scene.rotation.copy(new THREE.Euler(0, -3 * Math.PI / 4, 0));
