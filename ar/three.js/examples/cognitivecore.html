@@ -15,9 +15,12 @@
     <div style='position: absolute; left: 80px; top: 0px; width:100%; z-index: 1;'>
         <img src="../../data/images/arintouch_50x50.png" height="48" width="48" />
     </div>
+    <div class="cta" style="width:100%;text-align:center;position: absolute;bottom:0px;left:10px;z-index: 3;">
+        <a href="#" alt="video link">Launch Video</a>
+    </div>
     <script>
         window.onload = function () {
-
+            hideCTA();
         }
         //////////////////////////////////////////////////////////////////////////////////
         //		Init
@@ -113,6 +116,19 @@
             patternUrl: THREEx.ArToolkitContext.baseURL + '../data/data/patt.cognitivecore2'
             // patternUrl : THREEx.ArToolkitContext.baseURL + '../data/data/patt.kanji'
         })
+        artoolkitMarker.addEventListener('markerFound', function (event) {
+            showCTA();
+        })
+        artoolkitMarker.addEventListener('markerLost', function(event) {
+            hideCTA();
+        })
+
+        function showCTA() {
+            document.querySelector(".cta").hidden = false;
+        }
+        function hideCTA() {
+            document.querySelector(".cta").hidden = true;
+        }
         // build a smoothedControls
         var smoothedRoot = new THREE.Group()
         scene.add(smoothedRoot)
