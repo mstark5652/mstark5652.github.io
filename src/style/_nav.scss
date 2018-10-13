@@ -4,6 +4,7 @@
   padding: 30px;
   text-align: center;
   color: $light-text-color;
+  z-index: $z-header;
 
   .header-name {
     font-size: 20px;
@@ -17,6 +18,7 @@ img.main-profile {
 
 #navbar {
   overflow: hidden;
+  z-index: $z-nav;
   background-color: $nav-background-color;
 }
 

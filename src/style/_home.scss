@@ -1,8 +1,11 @@
-
+.content {
+  z-index: $z-content;
+}
 .home {
   background-color: $light-accent-color;
   width: 100%;
   height: 100%;
+  z-index: $z-content;
 }
 
 .section-title {

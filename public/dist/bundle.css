@@ -239,7 +239,8 @@ a.clean-link:hover {
   background-color: #16bac5;
   padding: 30px;
   text-align: center;
-  color: #fff; }
+  color: #fff;
+  z-index: 10; }
   .header .header-name {
     font-size: 20px; }
 
@@ -249,6 +250,7 @@ img.main-profile {
 
 #navbar {
   overflow: hidden;
+  z-index: 11;
   background-color: #555; }
 
 #navbar a {
@@ -314,10 +316,14 @@ img.main-profile {
   top: -70px;
   visibility: hidden; }
 
+.content {
+  z-index: 12; }
+
 .home {
   background-color: #F7D065;
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  z-index: 12; }
 
 .section-title {
   font-size: 26px;
@@ -369,7 +375,7 @@ img.main-profile {
     border: none;
     overflow: hidden;
     margin: 0px;
-    margin-top: -20px;
+    margin-top: -28px;
     max-height: 270px; }
   .hack-container img {
     display: block;
