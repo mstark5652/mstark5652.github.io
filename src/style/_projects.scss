@@ -5,65 +5,64 @@
   .section-title {
     margin-left: 10%;
     margin-right: 10%;
+    text-align: center;
   }
 }
 
 .back-drop {
-  width: 80%;
-  padding-top: 10px;
-  padding-left: 10%;
-  padding-right: 10%;
-  padding-bottom: 10px;
   background-color: $light-background-color;
 }
 
 .hack-container {
   width: 100%;
-  height: 250px;
-  padding: 10px;
   
   .title {
-    font-size: 24px;
+    font-size: 26px;
     color: $dark-text-color;
   }
+  .content {
+    font-size: 22px;
+  }
   
-  video {
-    border:none;
-    overflow:hidden;
-    margin: 0px;
-    margin-top: -28px;
-    max-height: 270px;
-  }
-
-  img {
-    display: block;
-    margin: 10px;
-    max-height: 200px;
-  }
-}
-@media screen and (max-width: 600px) {
-  .hack-container  {
-    height: 750px;
-  }
 }
 
 .mix-container {
-  width: 80%;
-  padding-left: 10%;
-  padding-right: 10%;
-  height: 250px;
 
   .title {
-    font-size: 24px;
+    font-size: 26px;
+    text-align: center;
     color: $dark-text-color;
   }
 
-  .mix-video {
-    border:none;
-    overflow:hidden;
-    background-color: $dark-text-color;
-    margin: 0px;
-    max-height: 230px;
+  .mix-list {
+    display: table;
+    margin: 0 auto 19px;
+
+    li {
+      float: left;
+      @media (max-width: 479px) {
+          dispQin: 0 auto;
+      }
+      & + li {
+        @media (max-width: 479px) {
+          margin-top: 5px;
+        }
+        &:before {
+          content: '\2022';
+          color: $accent-color;
+          float: left;
+          padding: 0 13px;
+          line-height: 15px;
+          display: block;
+          @media (max-width: 600px) {
+            padding: 0 5px;
+          }
+          @media (max-width: 479px) {
+            display: none;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -74,46 +73,74 @@
 }
 
 .cbr-container {
-  width: 100%;
-  height: 250px;
-  padding: 10px;
+    overflow-y: hidden;
+    padding-top: 35px;
+    position: relative;
+    margin-left: 10%;
+    margin-right: 10%;
 
-  .title {
-    font-size: 24px;
-    color: $dark-text-color;
-  }
-
-  img.cbr-logo {
-    width: 20%;
-    margin-top: 10px;
-    min-width: 250px;
-  }
-
-  .cbr-screenshots {
-    float: right;
-    img {
-      max-height: 250px;
-      margin-top: -55px;
-      margin-left: 5px;
-      margin-right: 5px;
+    @media (max-width: 1199px) {
+        padding-top: 10px;
     }
-  }
+    @media (max-width: 767px) {
+        text-align: center;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .title {
+      font-size: 26px;
+      color: $dark-text-color;
+    }
 
-  .platform-container {
-    .app-badge {
-      max-width: 200px;
+    .cbr-logo {
+      margin-top: 100px;
 
-      img {
-        width: 150px;
+      @media (max-width: 767px) {
+        margin-top: 10px;
+        max-width: 80%;
       }
     }
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .cbr-container  {
-    height: 750px;
-  }
+    
+    .mobile-img {
+        max-width: 100%;
+        @media (max-width: 767px) {
+            max-width: 250px;
+            display: block;
+            margin: 30px auto 0;
+        }
+    }
+    h2 {
+        margin-top: 22px;
+        margin-bottom: 20px;
+        @media (max-width: 991px) {
+            margin: 10px 0;
+        }
+        @media (max-width: 991px) {
+            margin-top: 22px;
+        }
+        @media (max-width: 767px) {
+            line-height: 1.3;
+        }
+    }
+    p {
+        margin-bottom: 15px;
+        @media (max-width: 991px) {
+            margin-bottom: 5px;
+        }
+    }
+    .dload-link{
+        display: inline-block;
+        margin-right: 20px;
+        margin-bottom: 15px;
+        img {
+          max-width: 200px;
+        }
+        @media (max-width:991px) {
+            img{
+                max-width: 150px;
+            }
+        }
+    }
 }
 
 
