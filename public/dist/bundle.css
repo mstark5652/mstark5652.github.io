@@ -330,6 +330,10 @@ img.main-profile {
   padding: 20px 20px;
   text-decoration: none;
   font-size: 17px; }
+  @media (max-width: 991px) {
+    #navbar a {
+      font-size: 14px;
+      padding: 15px 10px; } }
 
 #navbar a:hover {
   background-color: #aaa;
@@ -345,6 +349,13 @@ img.main-profile {
     padding-top: 16px;
     padding-left: 20px;
     padding-bottom: 6px; }
+  @media (max-width: 991px) {
+    #navbar .logo {
+      padding: 5px 10px; }
+      #navbar .logo.linkedin {
+        padding-top: 9px;
+        padding-left: 20px;
+        padding-bottom: 1px; } }
 
 #navbar a.logo:hover {
   background-color: #555;
@@ -355,6 +366,7 @@ img.main-profile {
 
 #navbar a.name {
   visibility: hidden;
+  display: none;
   opacity: 0;
   transition: visibility 0s, opacity 0.5s linear; }
 
@@ -364,7 +376,13 @@ img.main-profile {
 
 #navbar.sticky a.name {
   visibility: visible;
+  display: inline;
   opacity: 1; }
+  @media (max-width: 991px) {
+    #navbar.sticky a.name {
+      visibility: hidden;
+      display: none;
+      opacity: 0; } }
 
 .content {
   padding-top: 16px;
@@ -435,6 +453,9 @@ img.main-profile {
   .hack-container .title {
     font-size: 26px;
     color: #333; }
+    @media (max-width: 991px) {
+      .hack-container .title {
+        font-size: 20px; } }
   .hack-container .content {
     font-size: 22px; }
 
@@ -442,12 +463,16 @@ img.main-profile {
   font-size: 26px;
   text-align: center;
   color: #333; }
+  @media (max-width: 991px) {
+    .mix-container .title {
+      font-size: 20px; } }
 
 .mix-container .mix-list {
   display: table;
   margin: 0 auto 19px; }
   .mix-container .mix-list li {
-    float: left; }
+    float: left;
+    font-size: 20px; }
     @media (max-width: 479px) {
       .mix-container .mix-list li {
         dispQin: 0 auto; } }
@@ -467,6 +492,9 @@ img.main-profile {
       @media (max-width: 479px) {
         .mix-container .mix-list li + li:before {
           display: none; } }
+    @media (max-width: 991px) {
+      .mix-container .mix-list li {
+        font-size: 16px; } }
 
 @media screen and (max-width: 600px) {
   .mix-container {
@@ -489,6 +517,9 @@ img.main-profile {
   .cbr-container .title {
     font-size: 26px;
     color: #333; }
+    @media (max-width: 991px) {
+      .cbr-container .title {
+        font-size: 20px; } }
   .cbr-container .cbr-logo {
     margin-top: 100px; }
     @media (max-width: 767px) {

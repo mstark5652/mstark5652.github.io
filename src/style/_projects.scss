@@ -19,6 +19,9 @@
   .title {
     font-size: 26px;
     color: $dark-text-color;
+    @media (max-width: 991px) {
+      font-size: 20px;
+    }
   }
   .content {
     font-size: 22px;
@@ -32,6 +35,9 @@
     font-size: 26px;
     text-align: center;
     color: $dark-text-color;
+    @media (max-width: 991px) {
+      font-size: 20px;
+    }
   }
 
   .mix-list {
@@ -40,6 +46,7 @@
 
     li {
       float: left;
+      font-size: 20px;
       @media (max-width: 479px) {
           dispQin: 0 auto;
       }
@@ -61,6 +68,9 @@
             display: none;
           }
         }
+      }
+      @media (max-width: 991px) {
+        font-size: 16px;
       }
     }
   }
@@ -90,6 +100,9 @@
     .title {
       font-size: 26px;
       color: $dark-text-color;
+      @media (max-width: 991px) {
+        font-size: 20px;
+      }
     }
 
     .cbr-logo {
@@ -136,7 +149,7 @@
           max-width: 200px;
         }
         @media (max-width:991px) {
-            img{
+            img {
                 max-width: 150px;
             }
         }
