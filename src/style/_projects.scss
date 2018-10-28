@@ -38,6 +38,9 @@
     @media (max-width: 991px) {
       font-size: 20px;
     }
+    @media (max-width: 767px) {
+      width: 100%;
+    }
   }
 
   .mix-list {
@@ -75,13 +78,14 @@
       }
     }
   }
+
 }
 
-@media screen and (max-width: 600px) {
-  .mix-container  {
-    height: 750px;
-  }
-}
+// @media screen and (max-width: 600px) {
+//   .mix-container  {
+//     height: 750px;
+//   }
+// }
 
 .cbr-container {
     overflow-y: hidden;
@@ -120,7 +124,7 @@
         @media (max-width: 767px) {
             max-width: 250px;
             display: block;
-            margin: 30px auto 0;
+            margin: 7px auto;
         }
     }
     h2 {
@@ -141,6 +145,12 @@
         @media (max-width: 991px) {
             margin-bottom: 5px;
         }
+    }
+    .downloads-btns {
+
+      @media (max-width: 767px) {
+        flex-flow: column;
+      }
     }
     .dload-link{
         display: inline-block;

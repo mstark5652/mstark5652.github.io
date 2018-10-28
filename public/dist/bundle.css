@@ -229,9 +229,13 @@ a.clean-link:hover {
 
 .section-header {
   text-align: center; }
+  @media (max-width: 767px) {
+    .section-header {
+      margin-left: 0;
+      margin-right: 0; } }
   .section-header h2 {
     padding-top: 5px;
-    margin: 0 0 25px; }
+    margin: 0 0 25px 0; }
     @media (max-width: 767px) {
       .section-header h2 {
         margin-bottom: 15px; } }
@@ -311,6 +315,8 @@ a.clean-link:hover {
   .member .inner {
     max-width: 263px;
     margin: 0 auto; }
+    .member .inner .image img {
+      max-width: 100%; }
     .member .inner .texts {
       padding: 24px 0 20px; }
       .member .inner .texts h4 {
@@ -484,6 +490,9 @@ img.main-profile {
   @media (max-width: 991px) {
     .mix-container .title {
       font-size: 20px; } }
+  @media (max-width: 767px) {
+    .mix-container .title {
+      width: 100%; } }
 
 .mix-container .mix-list {
   display: table;
@@ -514,10 +523,6 @@ img.main-profile {
     @media (max-width: 991px) {
       .mix-container .mix-list li {
         font-size: 16px; } }
-
-@media screen and (max-width: 600px) {
-  .mix-container {
-    height: 750px; } }
 
 .cbr-container {
   overflow-y: hidden;
@@ -551,7 +556,7 @@ img.main-profile {
       .cbr-container .mobile-img {
         max-width: 250px;
         display: block;
-        margin: 30px auto 0; } }
+        margin: 7px auto; } }
   .cbr-container h2 {
     margin-top: 22px;
     margin-bottom: 20px; }
@@ -569,6 +574,9 @@ img.main-profile {
     @media (max-width: 991px) {
       .cbr-container p {
         margin-bottom: 5px; } }
+  @media (max-width: 767px) {
+    .cbr-container .downloads-btns {
+      flex-flow: column; } }
   .cbr-container .dload-link {
     display: inline-block;
     margin-right: 20px;
