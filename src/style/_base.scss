@@ -72,7 +72,7 @@ a.clean-link:hover {
     display: -ms-flex;
     display: -o-flex;
     display: flex;
-    max-height: 750px;
+    max-height: 800px;
 
     @media (max-width: 767px) {
         display: block;
@@ -107,10 +107,13 @@ a.clean-link:hover {
             width: 540px;
             max-width: 100%;
             @media (max-width: 991px) {
-                padding-left: 15px;
+                padding-right: 15px;
+                margin-left: 0;
+                margin-right: 0;
             }
             @media (max-width: 767px) {
                 padding: 30px 0;
+                padding-left: 15px;
             }
         }
     }
@@ -123,7 +126,8 @@ a.clean-link:hover {
                 padding-right: 37px;
                 float: right;
                 @media (max-width: 991px) {
-                    // padding-right: 15px;
+                    padding-right: 5px;
+                    padding-left: 5px;
                 }
                 @media (max-width: 767px) {
                     float: left;
