@@ -309,7 +309,7 @@ class MixologistView extends React.Component {
                         React.createElement("li", null,
                             React.createElement("a", { className: "clean-link", target: "_blank", href: "https://github.com/mstark5652/mocktailsmixer", title: "Github Repo" }, "Github Repo")),
                         React.createElement("li", null,
-                            React.createElement("a", { className: "clean-link", target: "_blank", href: "https://yourmixologist.herokuapp.com/", title: "Product Website" }, "Site")))),
+                            React.createElement("a", { className: "clean-link", target: "_blank", href: "https://www.mixologist.ai/", title: "Product Website" }, "Website")))),
                 React.createElement("div", { className: "row team_members" },
                     React.createElement("div", { className: "col-md-3 col-sm-6 member wow fadeInUp" },
                         React.createElement("div", { className: "row m0 inner" },

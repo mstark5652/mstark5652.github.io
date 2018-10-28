@@ -75,7 +75,7 @@ class MixologistView extends React.Component {
             <ul className="mix-list">
               <li><a className="clean-link" target="_blank" href="https://www.dimin.com/blog/creative-tech-kc-the-future-will-have-robot-bartenders/" title="Blog Article">Article</a></li>
               <li><a className="clean-link" target="_blank" href="https://github.com/mstark5652/mocktailsmixer" title="Github Repo">Github Repo</a></li>
-              <li><a className="clean-link" target="_blank" href="https://yourmixologist.herokuapp.com/" title="Product Website">Site</a></li>
+              <li><a className="clean-link" target="_blank" href="https://www.mixologist.ai/" title="Product Website">Website</a></li>
             </ul>
           </div>
 

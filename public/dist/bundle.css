@@ -475,10 +475,11 @@ img.main-profile {
     font-size: 20px; }
     @media (max-width: 479px) {
       .mix-container .mix-list li {
-        dispQin: 0 auto; } }
+        margin: 0 auto; } }
     @media (max-width: 479px) {
       .mix-container .mix-list li + li {
-        margin-top: 5px; } }
+        margin-top: 0px;
+        margin-left: 10px; } }
     .mix-container .mix-list li + li:before {
       content: '\2022';
       color: #FD7A09;
