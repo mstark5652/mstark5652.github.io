@@ -202,6 +202,13 @@ div.modal-dialog {
   background: #a9fff7;
   /* Gecko Browsers */ }
 
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden; }
+
 .float-right {
   float: right; }
 
