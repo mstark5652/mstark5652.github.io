@@ -10,7 +10,7 @@
 
 .section-title {
   font-size: 26px;
-  color: $primary-color;
+  color: $primary-color-dark;
 }
 .section-title::selection {
   background: $primary-color-dark;
@@ -28,4 +28,100 @@
   }
 }
 
+.small-divide {
+    @media (min-width: 480px) {
+        display: none;
+    }
+}
 
+footer {
+  background-color: $footer-background-color;
+  text-align: center;
+
+  .nav {
+    display: table;
+    margin: 0 auto;
+  }
+}
+
+.menu-rights {
+  padding: 35px 0;
+  p {
+    text-align: center;
+    font-size: 15px;
+    margin: 0;
+  }
+}
+
+
+.footer-menu {
+  display: table;
+  margin: 0 auto 19px;
+  li {
+    font-size: 20px;
+    float: left;
+    @media (max-width: 479px) {
+      display: table;
+      float: none;
+      margin: 0 auto;
+    }
+    & + li {
+      @media (max-width: 479px) {
+        margin-top: 5px;
+      }
+      &:before {
+        content: '\2022';
+        float: left;
+        padding: 0 13px;
+        line-height: 15px;
+        display: block;
+        @media (max-width: 600px) {
+          padding: 0 5px;
+        }
+        @media (max-width: 479px) {
+          display: none;
+        }
+      }
+    }
+    a {
+      padding: 0;
+      float: left;
+    }
+  }
+}
+
+.social-links {
+  padding: 43px 0 36px;
+  border-bottom: 1px solid;
+  ul {
+    display: table;
+    margin: 0 auto;
+    li {
+      float: left;
+      & + li {
+        margin-left: 25px;
+        // @media (max-width: 499px) {
+        //     margin-left: 25px;
+        // }
+      }
+      a {
+        width: 48px;
+        height: 48px;
+        font-size: 30px;
+        color: $accent-color;
+        line-height: 52px;
+        border-radius: 100%;
+        padding: 0;
+        @media (max-width: 360px) {
+          width: 40px;
+          height: 40px;
+          font-size: 18px;
+          line-height: 40px;
+        }
+        i {
+          margin-left: 2px;
+        }
+      }
+    }
+  }
+}

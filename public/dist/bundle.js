@@ -124,6 +124,7 @@ exports.AboutView = AboutView;
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = __webpack_require__(/*! react */ "react");
 const Navigation_1 = __webpack_require__(/*! ./Navigation */ "./src/components/Navigation.tsx");
+const Footer_1 = __webpack_require__(/*! ./Footer */ "./src/components/Footer.tsx");
 const style = __webpack_require__(/*! ../style/main.scss */ "./src/style/main.scss");
 const profile = "public/dist/" + __webpack_require__(/*! ../img/me.jpeg */ "./src/img/me.jpeg");
 class AppPage extends React.Component {
@@ -151,10 +152,46 @@ class AppPage extends React.Component {
                 React.createElement("br", null),
                 React.createElement("img", { className: "main-profile", src: profile, alt: "Profile Picture", title: "Profile Picture" })),
             React.createElement(Navigation_1.Navigation, null),
-            React.createElement("div", { className: "content" }, this.props.children)));
+            React.createElement("div", { className: "content" }, this.props.children),
+            React.createElement(Footer_1.Footer, null)));
     }
 }
 exports.AppPage = AppPage;
+
+
+/***/ }),
+
+/***/ "./src/components/Footer.tsx":
+/*!***********************************!*\
+  !*** ./src/components/Footer.tsx ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = __webpack_require__(/*! react */ "react");
+class Footer extends React.Component {
+    render() {
+        return (React.createElement("footer", null,
+            React.createElement("div", { className: "row m0 social-links" },
+                React.createElement("ul", { className: "nav" },
+                    React.createElement("li", { className: "wow fadeInUp", "data-wow-delay": "0.0s" },
+                        React.createElement("a", { href: "https://github.com/mstark5652", target: "_blank" },
+                            React.createElement("i", { className: "fa fa-github" }))),
+                    React.createElement("li", { className: "wow fadeInUp", "data-wow-delay": "0.1s" },
+                        React.createElement("a", { href: "https://www.instagram.com/m.stark5652/", target: "_blank" },
+                            React.createElement("i", { className: "fa fa-instagram" }))),
+                    React.createElement("li", { className: "wow fadeInUp", "data-wow-delay": "0.2s" },
+                        React.createElement("a", { href: "https://www.linkedin.com/in/michael-stark-8b650280", target: "_blank" },
+                            React.createElement("i", { className: "fa fa-linkedin" }))))),
+            React.createElement("div", { className: "menu-rights" },
+                React.createElement("ul", { className: "nav footer-menu" }),
+                React.createElement("p", null, "Michael Stark"))));
+    }
+}
+exports.Footer = Footer;
 
 
 /***/ }),
@@ -227,12 +264,7 @@ class Navigation extends React.Component {
         return (React.createElement("div", { id: "navbar" },
             React.createElement("a", { className: (this.state.activePage == "" || this.state.activePage == "home") ? "active" : "", onClick: () => this.pageState("home"), href: "#" }, "Home"),
             React.createElement("a", { className: (this.state.activePage == "about") ? "active" : "", onClick: () => this.pageState("about"), href: "#about" }, "About"),
-            React.createElement("a", { className: (this.state.activePage == "projects") ? "active" : "", onClick: () => this.pageState("projects"), href: "#projects" }, "Projects"),
-            React.createElement("a", { className: "nav-right logo", href: "https://github.com/mstark5652", target: "_blank" },
-                React.createElement("img", { src: githubLogo, alt: "Github logo", title: "Github Profile" })),
-            React.createElement("a", { className: "nav-right logo linkedin", href: "https://www.linkedin.com/in/michael-stark-8b650280", target: "_blank" },
-                React.createElement("img", { src: linkedInLogo, alt: "LinkedIn logo", title: "LinkedIn Profile" })),
-            React.createElement("a", { className: "nav-right name", href: "#" }, "Michael Stark")));
+            React.createElement("a", { className: (this.state.activePage == "projects") ? "active" : "", onClick: () => this.pageState("projects"), href: "#projects" }, "Projects")));
     }
 }
 exports.Navigation = Navigation;

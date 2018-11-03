@@ -2,6 +2,7 @@
 import * as React from "react"
 
 import { Navigation } from "./Navigation"
+import { Footer } from "./Footer"
 
 const style = require("../style/main.scss")
 
@@ -40,6 +41,7 @@ export class AppPage extends React.Component<object, AppState> {
         <div className="content">
           {this.props.children}
         </div>
+        <Footer />
       </main>
     )
   }

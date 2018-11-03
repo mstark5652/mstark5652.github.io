@@ -434,7 +434,7 @@ img.main-profile {
 
 .section-title {
   font-size: 26px;
-  color: #a9fff7; }
+  color: #16bac5; }
 
 .section-title::selection {
   background: #16bac5; }
@@ -448,6 +448,81 @@ img.main-profile {
 @media screen and (max-width: 600px) {
   .empty-block {
     height: 20px; } }
+
+@media (min-width: 480px) {
+  .small-divide {
+    display: none; } }
+
+footer {
+  background-color: #eee;
+  text-align: center; }
+  footer .nav {
+    display: table;
+    margin: 0 auto; }
+
+.menu-rights {
+  padding: 35px 0; }
+  .menu-rights p {
+    text-align: center;
+    font-size: 15px;
+    margin: 0; }
+
+.footer-menu {
+  display: table;
+  margin: 0 auto 19px; }
+  .footer-menu li {
+    font-size: 20px;
+    float: left; }
+    @media (max-width: 479px) {
+      .footer-menu li {
+        display: table;
+        float: none;
+        margin: 0 auto; } }
+    @media (max-width: 479px) {
+      .footer-menu li + li {
+        margin-top: 5px; } }
+    .footer-menu li + li:before {
+      content: '\2022';
+      float: left;
+      padding: 0 13px;
+      line-height: 15px;
+      display: block; }
+      @media (max-width: 600px) {
+        .footer-menu li + li:before {
+          padding: 0 5px; } }
+      @media (max-width: 479px) {
+        .footer-menu li + li:before {
+          display: none; } }
+    .footer-menu li a {
+      padding: 0;
+      float: left; }
+
+.social-links {
+  padding: 43px 0 36px;
+  border-bottom: 1px solid; }
+  .social-links ul {
+    display: table;
+    margin: 0 auto; }
+    .social-links ul li {
+      float: left; }
+      .social-links ul li + li {
+        margin-left: 25px; }
+      .social-links ul li a {
+        width: 48px;
+        height: 48px;
+        font-size: 30px;
+        color: #FD7A09;
+        line-height: 52px;
+        border-radius: 100%;
+        padding: 0; }
+        @media (max-width: 360px) {
+          .social-links ul li a {
+            width: 40px;
+            height: 40px;
+            font-size: 18px;
+            line-height: 40px; } }
+        .social-links ul li a i {
+          margin-left: 2px; }
 
 .about-container {
   width: 60%;
