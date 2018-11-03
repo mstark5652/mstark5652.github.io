@@ -42,6 +42,13 @@ footer {
     display: table;
     margin: 0 auto;
   }
+  a {
+    color: $accent-color;
+    &:hover, &:visited {
+      color: $accent-color;
+    }
+  }
+  
 }
 
 .menu-rights {

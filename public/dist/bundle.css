@@ -316,7 +316,12 @@ a.clean-link:hover {
     max-width: 263px;
     margin: 0 auto; }
     .member .inner .image img {
-      max-width: 100%; }
+      width: auto;
+      height: auto;
+      max-width: 416px; }
+      @media (max-width: 500px) {
+        .member .inner .image img {
+          max-width: 100%; } }
     .member .inner .texts {
       padding: 24px 0 20px; }
       .member .inner .texts h4 {
@@ -459,6 +464,10 @@ footer {
   footer .nav {
     display: table;
     margin: 0 auto; }
+  footer a {
+    color: #FD7A09; }
+    footer a:hover, footer a:visited {
+      color: #FD7A09; }
 
 .menu-rights {
   padding: 35px 0; }

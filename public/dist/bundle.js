@@ -188,7 +188,12 @@ class Footer extends React.Component {
                             React.createElement("i", { className: "fa fa-linkedin" }))))),
             React.createElement("div", { className: "menu-rights" },
                 React.createElement("ul", { className: "nav footer-menu" }),
-                React.createElement("p", null, "Michael Stark"))));
+                React.createElement("p", null, "Michael Stark"),
+                React.createElement("br", null),
+                React.createElement("p", null,
+                    React.createElement("a", { href: "mailto:mstark5652@gmail.com", title: "Email" },
+                        React.createElement("i", { className: "fa fa-envelope" }, "\u00A0\u00A0"),
+                        "mstark5652@gmail.com")))));
     }
 }
 exports.Footer = Footer;
@@ -348,18 +353,18 @@ class MixologistView extends React.Component {
                             React.createElement("div", { className: "row m0 image" },
                                 React.createElement("img", { className: "mix-image", src: mixologist, alt: "" })),
                             React.createElement("div", { className: "texts row m0" }))),
+                    React.createElement("div", { className: "col-md-3 col-sm-6 member wow fadeInUp" },
+                        React.createElement("div", { className: "row m0 inner" },
+                            React.createElement("div", { className: "row m0 image" }),
+                            React.createElement("div", { className: "texts row m0" }))),
                     React.createElement("div", { className: "col-md-3 col-sm-6 member wow fadeInUp", "data-wow-delay": "0.3s" },
-                        React.createElement("div", { className: "row m0 inner" },
-                            React.createElement("div", { className: "row m0 image" }),
-                            React.createElement("div", { className: "texts row m0" }))),
-                    React.createElement("div", { className: "col-md-3 col-sm-6 member wow fadeInUp", "data-wow-delay": "0.6s" },
-                        React.createElement("div", { className: "row m0 inner" },
-                            React.createElement("div", { className: "row m0 image" }),
-                            React.createElement("div", { className: "texts row m0" }))),
-                    React.createElement("div", { className: "col-md-3 col-sm-6 member wow fadeInUp", "data-wow-delay": "0.9s" },
                         React.createElement("div", { className: "row m0 inner" },
                             React.createElement("div", { className: "row m0 image" },
                                 React.createElement("iframe", { className: "mix-video", src: "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fjacobshepherd%2Fvideos%2F10160063700095370%2F&show_text=0&width=300", width: "300", height: "300", scrolling: "no", frameBorder: "0", allowFullScreen: true })),
+                            React.createElement("div", { className: "texts row m0" }))),
+                    React.createElement("div", { className: "col-md-3 col-sm-6 member wow fadeInUp", "data-wow-delay": "0.3s" },
+                        React.createElement("div", { className: "row m0 inner" },
+                            React.createElement("div", { className: "row m0 image" }),
                             React.createElement("div", { className: "texts row m0" })))))));
     }
 }
@@ -534,7 +539,7 @@ module.exports = __webpack_require__.p + "img/cb9cffedc9e9007b96cff9a2aea7730c.j
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "img/5d9e7926f55b4d185ae7bf484c7e2038.jpg";
+module.exports = __webpack_require__.p + "img/712def3712451da6e6a8d06811a1e3d3.jpg";
 
 /***/ }),
 

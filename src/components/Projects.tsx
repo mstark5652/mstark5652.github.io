@@ -91,28 +91,28 @@ class MixologistView extends React.Component {
               </div>
             </div>
 
+            <div className="col-md-3 col-sm-6 member wow fadeInUp">
+              <div className="row m0 inner">
+                <div className="row m0 image">
+                </div>
+                <div className="texts row m0">
+                </div>
+              </div>
+            </div>
+
             <div className="col-md-3 col-sm-6 member wow fadeInUp" data-wow-delay="0.3s">
               <div className="row m0 inner">
                 <div className="row m0 image">
-                </div>
-                <div className="texts row m0">
-                </div>
-              </div>
-            </div>
-
-            <div className="col-md-3 col-sm-6 member wow fadeInUp" data-wow-delay="0.6s">
-              <div className="row m0 inner">
-                <div className="row m0 image">
-                </div>
-                <div className="texts row m0">
-                </div>
-              </div>
-            </div>
-
-            <div className="col-md-3 col-sm-6 member wow fadeInUp" data-wow-delay="0.9s">
-              <div className="row m0 inner">
-                <div className="row m0 image">
                   <iframe className="mix-video" src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fjacobshepherd%2Fvideos%2F10160063700095370%2F&show_text=0&width=300" width="300" height="300" scrolling="no" frameBorder="0" allowFullScreen></iframe>
+                </div>
+                <div className="texts row m0">
+                </div>
+              </div>
+            </div>
+
+            <div className="col-md-3 col-sm-6 member wow fadeInUp" data-wow-delay="0.3s">
+              <div className="row m0 inner">
+                <div className="row m0 image">
                 </div>
                 <div className="texts row m0">
                 </div>

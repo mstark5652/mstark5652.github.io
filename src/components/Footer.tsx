@@ -16,6 +16,8 @@ export class Footer extends React.Component<object, object> {
             <ul className="nav footer-menu">
             </ul>
             <p>Michael Stark</p>
+            <br />
+            <p><a href="mailto:mstark5652@gmail.com" title="Email"><i className="fa fa-envelope">&nbsp;&nbsp;</i>mstark5652@gmail.com</a></p>
           </div>
       </footer>
     )
