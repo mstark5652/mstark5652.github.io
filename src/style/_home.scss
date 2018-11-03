@@ -43,9 +43,15 @@ footer {
     margin: 0 auto;
   }
   a {
+    text-decoration: none;
     color: $accent-color;
-    &:hover, &:visited {
+    &:visited {
+      text-decoration: none;
       color: $accent-color;
+    }
+    &:hover {
+      text-decoration: none;
+      color: $header-color;
     }
   }
   
