@@ -175,6 +175,7 @@ const React = __webpack_require__(/*! react */ "react");
 class Footer extends React.Component {
     render() {
         return (React.createElement("footer", null,
+            React.createElement("div", { id: "contact", className: "anchor" }),
             React.createElement("div", { className: "row m0 social-links" },
                 React.createElement("ul", { className: "nav" },
                     React.createElement("li", { className: "wow fadeInUp", "data-wow-delay": "0.0s" },
@@ -269,7 +270,8 @@ class Navigation extends React.Component {
         return (React.createElement("div", { id: "navbar" },
             React.createElement("a", { className: (this.state.activePage == "" || this.state.activePage == "home") ? "active" : "", onClick: () => this.pageState("home"), href: "#" }, "Home"),
             React.createElement("a", { className: (this.state.activePage == "about") ? "active" : "", onClick: () => this.pageState("about"), href: "#about" }, "About"),
-            React.createElement("a", { className: (this.state.activePage == "projects") ? "active" : "", onClick: () => this.pageState("projects"), href: "#projects" }, "Projects")));
+            React.createElement("a", { className: (this.state.activePage == "projects") ? "active" : "", onClick: () => this.pageState("projects"), href: "#projects" }, "Projects"),
+            React.createElement("a", { className: (this.state.activePage == "contact") ? "active" : "", onClick: () => this.pageState("contact"), href: "#contact" }, "Contact")));
     }
 }
 exports.Navigation = Navigation;
