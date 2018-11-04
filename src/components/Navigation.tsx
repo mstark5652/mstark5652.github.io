@@ -1,9 +1,6 @@
 
 import * as React from "react"
 
-const githubLogo = "public/dist/" + require("../img/github.svg")
-const linkedInLogo = "public/dist/" + require("../img/linkedin.svg")
-
 interface NavState {
   activePage?: string
 }
@@ -15,22 +12,6 @@ export class Navigation extends React.Component<object, NavState> {
     this.state = {
       activePage: "" + window.location.hash.replace('#', '').toLowerCase()
     }
-  }
-  
-  componentDidMount() {
-    window.onscroll = function (): void { stickyNav() };
-
-    let navbar = document.getElementById("navbar") as HTMLElement;
-    let sticky = navbar.offsetTop + 90;
-
-    function stickyNav(): void {
-      if (window.pageYOffset >= sticky) {
-        navbar.classList.add("sticky")
-      } else {
-        navbar.classList.remove("sticky");
-      }
-    }
-
   }
 
   pageState(val: string) {
