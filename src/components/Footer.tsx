@@ -10,7 +10,7 @@ export class Footer extends React.Component<object, object> {
           <ul className="nav">
             <li className="wow fadeInUp" data-wow-delay="0.0s"><a title="GitHub" href="https://github.com/mstark5652" target="_blank"><i className="fa fa-github"></i></a></li>
             <li className="wow fadeInUp" data-wow-delay="0.1s"><a title="Instagram" href="https://www.instagram.com/m.stark5652/" target="_blank"><i className="fa fa-instagram"></i></a></li>
-            <li className="wow fadeInUp" data-wow-delay="0.2s"><a title="LinkedIn" href="https://www.linkedin.com/in/michael-stark-8b650280" target="_blank"><i className="fa fa-linkedin"></i></a></li>
+            <li className="wow fadeInUp" data-wow-delay="0.2s"><a title="LinkedIn" href="https://www.linkedin.com/in/michaelstark5652" target="_blank"><i className="fa fa-linkedin"></i></a></li>
           </ul>
         </div>
         <div className="menu-rights">

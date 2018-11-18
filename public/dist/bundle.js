@@ -185,7 +185,7 @@ class Footer extends React.Component {
                         React.createElement("a", { title: "Instagram", href: "https://www.instagram.com/m.stark5652/", target: "_blank" },
                             React.createElement("i", { className: "fa fa-instagram" }))),
                     React.createElement("li", { className: "wow fadeInUp", "data-wow-delay": "0.2s" },
-                        React.createElement("a", { title: "LinkedIn", href: "https://www.linkedin.com/in/michael-stark-8b650280", target: "_blank" },
+                        React.createElement("a", { title: "LinkedIn", href: "https://www.linkedin.com/in/michaelstark5652", target: "_blank" },
                             React.createElement("i", { className: "fa fa-linkedin" }))))),
             React.createElement("div", { className: "menu-rights" },
                 React.createElement("ul", { className: "nav footer-menu" }),
@@ -239,27 +239,12 @@ exports.IndexPage = IndexPage;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = __webpack_require__(/*! react */ "react");
-const githubLogo = "public/dist/" + __webpack_require__(/*! ../img/github.svg */ "./src/img/github.svg");
-const linkedInLogo = "public/dist/" + __webpack_require__(/*! ../img/linkedin.svg */ "./src/img/linkedin.svg");
 class Navigation extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             activePage: "" + window.location.hash.replace('#', '').toLowerCase()
         };
-    }
-    componentDidMount() {
-        window.onscroll = function () { stickyNav(); };
-        let navbar = document.getElementById("navbar");
-        let sticky = navbar.offsetTop + 90;
-        function stickyNav() {
-            if (window.pageYOffset >= sticky) {
-                navbar.classList.add("sticky");
-            }
-            else {
-                navbar.classList.remove("sticky");
-            }
-        }
     }
     pageState(val) {
         this.setState({
@@ -479,17 +464,6 @@ module.exports = __webpack_require__.p + "img/754ad6b2b154ad393b4b552a2ecfee8f.p
 
 /***/ }),
 
-/***/ "./src/img/github.svg":
-/*!****************************!*\
-  !*** ./src/img/github.svg ***!
-  \****************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "img/c71ad495c9e20e65bc623b8c44b49a48.svg";
-
-/***/ }),
-
 /***/ "./src/img/hackGroup.jpg":
 /*!*******************************!*\
   !*** ./src/img/hackGroup.jpg ***!
@@ -509,17 +483,6 @@ module.exports = __webpack_require__.p + "img/d585ea342b6372c7d03207b1e4ae32f6.j
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/44320286fd8f6f7fe0cb137feda8ec2f.png";
-
-/***/ }),
-
-/***/ "./src/img/linkedin.svg":
-/*!******************************!*\
-  !*** ./src/img/linkedin.svg ***!
-  \******************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "img/16b60803a410db662b271eb53806f55c.svg";
 
 /***/ }),
 
