@@ -205,7 +205,8 @@ div.modal-dialog {
 html, body {
   width: 100%;
   height: 100%;
-  margin: 0px;
+  max-width: 1400px;
+  margin: auto;
   padding: 0px;
   overflow-x: hidden; }
 
@@ -331,10 +332,12 @@ a.clean-link:hover {
 
 .header {
   background-color: #16bac5;
-  padding: 30px;
   text-align: center;
   color: #fff;
   z-index: 10; }
+  .header .header-overlay {
+    position: absolute;
+    margin: auto; }
   .header .header-name {
     font-size: 20px; }
 
@@ -437,6 +440,9 @@ img.main-profile {
   height: 100%;
   z-index: 12; }
 
+.header-name {
+  font-size: 20px; }
+
 .section-title {
   font-size: 26px;
   color: #16bac5; }
@@ -537,6 +543,25 @@ footer {
             line-height: 40px; } }
         .social-links ul li a i {
           margin-left: 2px; }
+
+.pano-container {
+  height: 600px;
+  width: 100%;
+  display: flex;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); }
+
+svg#panolens-view-indicator-container {
+  fill: #fff; }
+  svg#panolens-view-indicator-container .st0 {
+    stroke: #fff; }
 
 .about-container {
   width: 60%;
