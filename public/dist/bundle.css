@@ -334,6 +334,7 @@ a.clean-link:hover {
   background-color: #16bac5;
   text-align: center;
   color: #fff;
+  padding: 10px;
   z-index: 10; }
   .header .header-overlay {
     position: absolute;
