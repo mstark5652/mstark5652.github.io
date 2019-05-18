@@ -1,11 +1,14 @@
 
 .header {
   background-color: $primary-color-dark;
-  padding: 30px;
   text-align: center;
   color: $light-text-color;
   z-index: $z-header;
 
+  .header-overlay {
+    position: absolute;
+    margin: auto;
+  }
   .header-name {
     font-size: 20px;
   }

@@ -6,6 +6,8 @@ output/
 # Config
 
 config.json
+config.bat
+config.sh
 gc.json
 
 # Babel

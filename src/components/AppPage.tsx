@@ -3,10 +3,13 @@ import * as React from "react"
 
 import { Navigation } from "./Navigation"
 import { Footer } from "./Footer"
+import { Lens } from "./Lens"
 
+// leave for bundle
 const style = require("../style/main.scss")
 
-const profile = "public/dist/" + require("../img/me.jpeg")
+const pano = "public/dist/" + require("../img/pano_mountain.jpg") //"https://s3.us-east-2.amazonaws.com/static-serving/pano_mountain.jpg"
+import { SPOTS } from "../helper"
 
 interface AppState { hasError: boolean; }
 
@@ -31,11 +34,7 @@ export class AppPage extends React.Component<object, AppState> {
     return (
       <main>
         <div className="header">
-          <p className="header-name">Michael Stark</p>
-          <br />
-          <p>Software Engineer</p>
-          <br />
-          <img className="main-profile" src={profile} alt="Profile Picture" title="Profile Picture" />
+          <Lens src={pano} infospots={SPOTS} />
         </div>
         <Navigation />
         <div className="content">

@@ -125,8 +125,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const React = __webpack_require__(/*! react */ "react");
 const Navigation_1 = __webpack_require__(/*! ./Navigation */ "./src/components/Navigation.tsx");
 const Footer_1 = __webpack_require__(/*! ./Footer */ "./src/components/Footer.tsx");
+const Lens_1 = __webpack_require__(/*! ./Lens */ "./src/components/Lens.tsx");
+// leave for bundle
 const style = __webpack_require__(/*! ../style/main.scss */ "./src/style/main.scss");
-const profile = "public/dist/" + __webpack_require__(/*! ../img/me.jpeg */ "./src/img/me.jpeg");
+const pano = "public/dist/" + __webpack_require__(/*! ../img/pano_mountain.jpg */ "./src/img/pano_mountain.jpg"); //"https://s3.us-east-2.amazonaws.com/static-serving/pano_mountain.jpg"
+const helper_1 = __webpack_require__(/*! ../helper */ "./src/helper.ts");
 class AppPage extends React.Component {
     constructor(props) {
         super(props);
@@ -146,11 +149,7 @@ class AppPage extends React.Component {
         }
         return (React.createElement("main", null,
             React.createElement("div", { className: "header" },
-                React.createElement("p", { className: "header-name" }, "Michael Stark"),
-                React.createElement("br", null),
-                React.createElement("p", null, "Software Engineer"),
-                React.createElement("br", null),
-                React.createElement("img", { className: "main-profile", src: profile, alt: "Profile Picture", title: "Profile Picture" })),
+                React.createElement(Lens_1.Lens, { src: pano, infospots: helper_1.SPOTS })),
             React.createElement(Navigation_1.Navigation, null),
             React.createElement("div", { className: "content" }, this.props.children),
             React.createElement(Footer_1.Footer, null)));
@@ -224,6 +223,175 @@ class IndexPage extends React.Component {
     }
 }
 exports.IndexPage = IndexPage;
+
+
+/***/ }),
+
+/***/ "./src/components/Lens.tsx":
+/*!*********************************!*\
+  !*** ./src/components/Lens.tsx ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = __webpack_require__(/*! react */ "react");
+const helper_1 = __webpack_require__(/*! ../helper */ "./src/helper.ts");
+const Waypoint_1 = __webpack_require__(/*! ../models/Waypoint */ "./src/models/Waypoint.ts");
+const Infospot_1 = __webpack_require__(/*! ../models/Infospot */ "./src/models/Infospot.ts");
+class Lens extends React.Component {
+    constructor(props) {
+        super(props);
+        /** Private Methods */
+        this.cleanUpPanolens = () => {
+            if (this.panolens) {
+                this.panolens.dispose();
+                this.panoViewer.remove(this.panolens);
+                this.panolens = undefined;
+                delete this.panolens;
+            }
+        };
+        this.enableControls = () => {
+            if (helper_1.IS_MOBILE) {
+                this.panoViewer.enableControl(PANOLENS.Controls.DEVICEORIENTATION);
+            }
+            else {
+                this.panoViewer.enableControl(PANOLENS.Controls.ORBIT);
+            }
+        };
+        this.changePosition = (event) => {
+            if (event.detail) {
+                let id = event.detail.id;
+                let pos = event.detail.position;
+                this.state.infospots.forEach((spot) => {
+                    if (spot.spotId == id) {
+                        spot.position.copy(pos);
+                    }
+                });
+            }
+        };
+        this.setupViewer = () => {
+            if (!this.panoViewer) {
+                this.panoViewer = new PANOLENS.Viewer({
+                    container: document.querySelector(".pano-container"),
+                    // camera
+                    controlBar: true,
+                    controlButtons: ['video'],
+                    horizontalView: true,
+                    polarModifier: 1,
+                    viewIndicator: true,
+                    indicatorSize: 50,
+                    enableReticle: false,
+                    dwellTime: 1500,
+                    autoReticleSelect: true,
+                    cameraFov: this.props.cameraFov || 90,
+                    autoHideControlBar: false,
+                    autoHideInfospot: false,
+                    output: 'console',
+                });
+                this.panoViewer.OrbitControls.noZoom = this.props.noZoom || true;
+            }
+        };
+        this.removeInfospots = (infospots) => {
+            if (this.panolens) {
+                const scope = this;
+                infospots.forEach((item) => {
+                    scope.panolens.remove(item);
+                });
+            }
+        };
+        this.loadinfospots = () => {
+            this.removeInfospots(this.state.infospots || []);
+            const scope = this;
+            const spots = this.props.infospots || [];
+            const newInfospots = [];
+            this.setState({
+                infospots: []
+            });
+            const SCALE_FACTOR = 1.0;
+            spots.forEach((item) => {
+                const spot = new PANOLENS.Infospot(item.scale || 300, item.imageSrc, true, SCALE_FACTOR, item.center);
+                spot.position.copy(item.position);
+                spot.spotId = item.id;
+                if (item.hoverText) {
+                    spot.setText(item.hoverText);
+                }
+                if (item instanceof Infospot_1.Infospot) {
+                    spot.addEventListener('infospot-modal-appear', (event) => {
+                        item.infospotSelected();
+                        // Track 'infospot-modal-appear:' + item.id
+                    });
+                    if (item.hasInitialFocus) {
+                        setTimeout(() => {
+                            spot.focus(0); // 0 duration so camera doesn't fling
+                            // _this.panoViewer.tweenControlCenter(spot.position, 0);
+                        }, 200);
+                    }
+                }
+                if (item instanceof Waypoint_1.Waypoint) {
+                    spot.addEventListener('infospot-click', (event) => {
+                        item.waypointSelected();
+                        // Track 'waypoint-selected:' + item.id
+                    });
+                }
+                spot.addEventListener('infospot-modal-dismiss', (event) => {
+                    // Track 'infospot-modal-dismiss:' + item.id
+                });
+                newInfospots.push(spot);
+                scope.panolens.add(spot);
+            });
+            this.setState({
+                infospots: newInfospots,
+            });
+        };
+        if (!this.props || !this.props.src) {
+            throw new Error("Lens requires an image source passed through via props.");
+        }
+        this.state = {
+            infospots: []
+        };
+    }
+    /** Lifecycle Methods */
+    componentDidMount() {
+        this.setupViewer();
+        this.cleanUpPanolens();
+        this.panolens = new PANOLENS.ImagePanorama(this.props.src);
+        this.panoViewer.add(this.panolens);
+        this.panoViewer.setPanorama(this.panolens);
+        this.enableControls();
+        this.loadinfospots();
+        window.addEventListener("infospot-update", this.changePosition);
+    }
+    shouldComponentUpdate(nextProps, nextState) {
+        return (this.props.src !== nextProps.src);
+    }
+    componentDidUpdate(prevProps, nextProps) {
+        this.setupViewer();
+        if (this.props.src !== prevProps.src) {
+            this.cleanUpPanolens();
+            this.panolens = new PANOLENS.ImagePanorama(this.props.src);
+            this.panoViewer.add(this.panolens);
+            this.panoViewer.setPanorama(this.panolens);
+            this.enableControls();
+        }
+        this.loadinfospots();
+    }
+    componentWillUnmount() {
+        window.removeEventListener("infospot-update", this.changePosition);
+        this.cleanUpPanolens();
+        if (this.panoViewer) {
+            this.panoViewer.destory();
+            this.panoViewer = undefined;
+            delete this.panoViewer;
+        }
+    }
+    render() {
+        return (React.createElement("div", { className: "pano-container" }));
+    }
+}
+exports.Lens = Lens;
 
 
 /***/ }),
@@ -431,6 +599,36 @@ exports.SiteRouter = SiteRouter;
 
 /***/ }),
 
+/***/ "./src/helper.ts":
+/*!***********************!*\
+  !*** ./src/helper.ts ***!
+  \***********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+const Infospot_1 = __webpack_require__(/*! ./models/Infospot */ "./src/models/Infospot.ts");
+exports.IS_MOBILE = window ? 'ontouchstart' in window || window.navigator.msMaxTouchPoints : false;
+exports.s4 = () => {
+    return Math.floor((1 + Math.random()) * 0x10000)
+        .toString(16)
+        .substring(1);
+};
+exports.SPOTS = [
+    new Infospot_1.Infospot({
+        id: "spot-345",
+        position: new THREE.Vector3(-5718.26, 1404.26, 3315.81),
+        imageSrc: "public/dist/" + __webpack_require__(/*! ./img/info.png */ "./src/img/info.png"),
+        hoverText: "Michael Stark",
+        hasInitialFocus: true,
+    })
+];
+
+
+/***/ }),
+
 /***/ "./src/img/androidAppStore.png":
 /*!*************************************!*\
   !*** ./src/img/androidAppStore.png ***!
@@ -449,7 +647,7 @@ module.exports = __webpack_require__.p + "img/5c19d2095933117efee9704b74b851d1.p
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "img/23e944bc1045d489cc94dc333a9e1845.png";
+module.exports = __webpack_require__.p + "img/f061edc9a4cac5c02c1a9c2167f8180f.png";
 
 /***/ }),
 
@@ -460,7 +658,7 @@ module.exports = __webpack_require__.p + "img/23e944bc1045d489cc94dc333a9e1845.p
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "img/754ad6b2b154ad393b4b552a2ecfee8f.png";
+module.exports = __webpack_require__.p + "img/18cf6c4edf040272523ab96069abbd37.png";
 
 /***/ }),
 
@@ -471,7 +669,18 @@ module.exports = __webpack_require__.p + "img/754ad6b2b154ad393b4b552a2ecfee8f.p
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "img/d585ea342b6372c7d03207b1e4ae32f6.jpg";
+module.exports = __webpack_require__.p + "img/2b12513861c58036ba32fb60db93cc74.jpg";
+
+/***/ }),
+
+/***/ "./src/img/info.png":
+/*!**************************!*\
+  !*** ./src/img/info.png ***!
+  \**************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "img/5872a48c60d6ae0bd12b410aa58cd1c5.png";
 
 /***/ }),
 
@@ -486,17 +695,6 @@ module.exports = __webpack_require__.p + "img/44320286fd8f6f7fe0cb137feda8ec2f.p
 
 /***/ }),
 
-/***/ "./src/img/me.jpeg":
-/*!*************************!*\
-  !*** ./src/img/me.jpeg ***!
-  \*************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "img/cb9cffedc9e9007b96cff9a2aea7730c.jpeg";
-
-/***/ }),
-
 /***/ "./src/img/mixologist.jpg":
 /*!********************************!*\
   !*** ./src/img/mixologist.jpg ***!
@@ -504,7 +702,7 @@ module.exports = __webpack_require__.p + "img/cb9cffedc9e9007b96cff9a2aea7730c.j
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "img/712def3712451da6e6a8d06811a1e3d3.jpg";
+module.exports = __webpack_require__.p + "img/ec5ddd1f67e0361bf5ccb68b1afadd34.jpg";
 
 /***/ }),
 
@@ -515,7 +713,18 @@ module.exports = __webpack_require__.p + "img/712def3712451da6e6a8d06811a1e3d3.j
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "img/c4b832ed02420928cd43de662c5f3d79.png";
+module.exports = __webpack_require__.p + "img/8fb651e739b2624a4145ec49a486ede3.png";
+
+/***/ }),
+
+/***/ "./src/img/pano_mountain.jpg":
+/*!***********************************!*\
+  !*** ./src/img/pano_mountain.jpg ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "img/ff7fdf71f5e013a99ffa680b779d212a.jpg";
 
 /***/ }),
 
@@ -537,6 +746,129 @@ const AppPage_1 = __webpack_require__(/*! ./components/AppPage */ "./src/compone
 ReactDOM.render(React.createElement(react_router_dom_1.BrowserRouter, null,
     React.createElement(AppPage_1.AppPage, null,
         React.createElement(SiteRouter_1.SiteRouter, null))), document.getElementById("main"));
+
+
+/***/ }),
+
+/***/ "./src/models/Infospot.ts":
+/*!********************************!*\
+  !*** ./src/models/Infospot.ts ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+const helper_1 = __webpack_require__(/*! ../helper */ "./src/helper.ts");
+class Infospot {
+    constructor(props) {
+        /** Private Methods */
+        this.fireHandlers = () => {
+            if (this.clickHandlers) {
+                const scope = this;
+                this.clickHandlers.forEach((handler) => {
+                    if (handler) {
+                        handler.call(scope, scope);
+                    }
+                });
+            }
+        };
+        /** Public Methods */
+        this.infospotSelected = () => {
+            window.dispatchEvent(new CustomEvent("waypoint-selected", { detail: this }));
+            this.fireHandlers();
+        };
+        this.addClickHandler = (handler) => {
+            this.clickHandlers.push(handler);
+        };
+        this.removeClickHandler = (handler) => {
+            this.clickHandlers = this.clickHandlers.filter((item) => {
+                return item !== handler;
+            });
+        };
+        this.resetClickHandler = () => {
+            this.clickHandlers = [];
+        };
+        if (typeof props.position === "undefined" || props.position === null) {
+            throw new Error("Infospot must have a position specified in props.");
+        }
+        if (typeof props.imageSrc === "undefined" || props.imageSrc === null) {
+            throw new Error("Infospot must have a imageSrc specified in props.");
+        }
+        this.position = props.position;
+        this.imageSrc = props.imageSrc;
+        this.id = props.id || helper_1.s4();
+        this.clickHandlers = props.clickHandlers || [];
+        this.scale = props.scale || 300;
+        this.center = props.center || null;
+        this.animated = props.animated || true;
+        this.hasInitialFocus = props.hasInitialFocus || false;
+        this.hoverText = props.hoverText || null;
+        this.hoverElement = props.hoverElement || null;
+    }
+}
+exports.Infospot = Infospot;
+
+
+/***/ }),
+
+/***/ "./src/models/Waypoint.ts":
+/*!********************************!*\
+  !*** ./src/models/Waypoint.ts ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+const helper_1 = __webpack_require__(/*! ../helper */ "./src/helper.ts");
+class Waypoint {
+    constructor(props) {
+        /** Private Methods */
+        this.fireHandlers = () => {
+            if (this.clickHandlers) {
+                const scope = this;
+                this.clickHandlers.forEach((handler) => {
+                    if (handler) {
+                        handler.call(scope, scope);
+                    }
+                });
+            }
+        };
+        /** Public Methods */
+        this.waypointSelected = () => {
+            window.dispatchEvent(new CustomEvent("waypoint-selected", { detail: this }));
+            this.fireHandlers();
+        };
+        this.addClickHandler = (handler) => {
+            this.clickHandlers.push(handler);
+        };
+        this.removeClickHandler = (handler) => {
+            this.clickHandlers = this.clickHandlers.filter((item) => {
+                return item !== handler;
+            });
+        };
+        this.resetClickHandler = () => {
+            this.clickHandlers = [];
+        };
+        if (typeof props.position === "undefined" || props.position === null) {
+            throw new Error("Waypoint must have a position specified in props.");
+        }
+        if (typeof props.imageSrc === "undefined" || props.imageSrc === null) {
+            throw new Error("Waypoint must have a imageSrc specified in props.");
+        }
+        this.position = props.position;
+        this.imageSrc = props.imageSrc;
+        this.id = props.id || helper_1.s4();
+        this.clickHandlers = props.clickHandlers || [];
+        this.scale = props.scale || 300;
+        this.center = props.center || null;
+        this.animated = props.animated || true;
+    }
+}
+exports.Waypoint = Waypoint;
 
 
 /***/ }),
