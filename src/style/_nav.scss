@@ -20,13 +20,18 @@ img.main-profile {
   text-align: center;
 }
 
-#navbar {
+nav {
   overflow: hidden;
   z-index: $z-nav;
   background-color: $nav-background-color;
 }
 
-#navbar a {
+nav .items {
+  margin: auto;
+  max-width: $max-width;
+}
+
+nav .items a {
   float: left;
   display: block;
   color: $nav-text-color;
@@ -41,16 +46,16 @@ img.main-profile {
   }
 }
 
-#navbar a:hover {
+nav .items a:hover {
   background-color: $nav-item-hover;
   color: $nav-text-color;
 }
 
-#navbar a.active {
+nav .items a.active {
   background-color: $primary-color;
   color: $nav-background-color;
 }
-#navbar .logo {
+nav .items .logo {
   padding: 10px 14px;
 
   &.linkedin {
@@ -67,24 +72,24 @@ img.main-profile {
     }
   }
 }
-#navbar a.logo:hover {
+nav .items a.logo:hover {
   background-color: $nav-background-color;
   color: $nav-text-color;
 }
-#navbar .nav-right {
+nav .items .nav-right {
   float: right;
 }
-#navbar a.name {
+nav .items a.name {
   visibility: hidden;
   display: none;
   opacity: 0;
   transition: visibility 0s, opacity 0.5s linear;
 }
-#navbar a.name:hover {
+nav .items a.name:hover {
   background-color: $nav-background-color;
   color: $nav-text-color;
 }
-#navbar.sticky a.name {
+nav.sticky a.name {
   visibility: visible;
   display: inline;
   opacity: 1;

@@ -1,5 +1,7 @@
 .content {
   z-index: $z-content;
+  max-width: $max-width;
+  margin: auto;
 }
 .home {
   background-color: $light-accent-color;
