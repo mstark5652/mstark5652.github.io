@@ -3,6 +3,7 @@
   max-width: $max-width;
   margin: auto;
 }
+
 .home {
   background-color: $light-accent-color;
   width: 100%;
@@ -10,9 +11,23 @@
   z-index: $z-content;
 }
 
-.header-name {
-  font-size: 20px;
+.header {
+  background-color: $primary-color-dark;
+  text-align: center;
+  color: $light-text-color;
+  padding: 10px;
+  z-index: $z-header;
+
+  .header-overlay {
+    position: absolute;
+    margin: auto;
+  }
+  .header-name {
+    font-size: 26px;
+    font-weight: bold;
+  }
 }
+
 
 .section-title {
   font-size: 26px;
