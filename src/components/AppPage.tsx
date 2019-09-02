@@ -1,49 +1,51 @@
 
-import * as React from "react"
+import * as React from 'react';
 
-import { Navigation } from "./Navigation"
-import { Footer } from "./Footer"
+import { Navigation } from './Navigation';
+import { Footer } from './Footer';
+import IndexPage from './IndexPage';
 
 // leave for bundle
-const style = require("../style/main.scss")
+const style = require('../style/main.scss');
 
-const profile = "public/dist/" + require("../img/me.jpeg")
+const profile = 'public/dist/' + require('../img/me.jpg');
 
 interface AppState { hasError: boolean; }
 
 export class AppPage extends React.Component<object, AppState> {
   constructor(props: object) {
-    super(props)
+    super(props);
     this.state = {
       hasError: false
-    }
+    };
   }
 
   componentDidCatch(error: any, info: any) {
     // Display fallback UI
     this.setState({ hasError: true });
     // You can also log the error to an error reporting service
-    console.log("error", error, info);
+    console.log('error', error, info);
   }
+
   render() {
     if (this.state.hasError) {
-      return (<p>AppPage has errors.</p>)
+      return (<p>AppPage has errors.</p>);
     }
     return (
       <main>
-        <div className="header">
-        <p className="header-name">Michael Stark</p>
+        <div className='header'>
+          <p className='header-name'>Michael Stark</p>
           <br />
           <p>Software Engineer</p>
           <br />
-          <img className="main-profile" src={profile} alt="Profile Picture" title="Profile Picture" />
+          <img className='main-profile' src={profile} alt='Profile Picture' title='Profile Picture' />
         </div>
         <Navigation />
-        <div className="content">
-          {this.props.children}
+        <div className='content'>
+          <IndexPage />
         </div>
         <Footer />
       </main>
-    )
+    );
   }
 }
