@@ -31,21 +31,12 @@ module.exports = {
       {
         test: /\.s[ac]ss$/,
         use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: 'bundle.css',
-            },
-          },
-          { loader: 'extract-loader' },
-          { loader: 'css-loader' },
-          {
-            loader: 'sass-loader',
-            options: {
-              module: true,
-              includePaths: ['./node_modules'],
-            }
-          }
+          // Creates `style` nodes from JS strings
+          'style-loader',
+          // Translates CSS into CommonJS
+          'css-loader',
+          // Compiles Sass to CSS
+          'sass-loader',
         ]
       },
       // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
@@ -59,7 +50,7 @@ module.exports = {
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
         loaders: [
-          'file-loader?hash=sha512&digest=hex&name=img/[hash].[ext]',
+          'file-loader',
           'image-webpack-loader?bypassOnDebug&optipng.optimizationLevel=7&gifsicle.interlaced=false',
         ]
       },
