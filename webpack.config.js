@@ -1,18 +1,19 @@
-const path = require("path");
+const path = require('path')
+const debug = process.env.NODE_ENV !== 'production'
 
 module.exports = {
-  entry: path.resolve(__dirname, 'src', 'index.tsx'),
+  entry: ['@babel/polyfill', path.resolve(__dirname, 'src', 'index.js')],
+  mode: debug ? 'development' : 'production',
   output: {
-    path: path.resolve(__dirname, "public", "dist"),
-    filename: "bundle.js"
+    path: path.resolve(__dirname, 'build'),
+    filename: 'bundle.js'
   },
 
   // Enable sourcemaps for debugging webpack's output.
-  devtool: "source-map",
+  devtool: debug ? 'source-map' : false,
 
   resolve: {
-    // Add '.ts' and '.tsx' as resolvable extensions.
-    extensions: [".ts", ".tsx", ".js", ".jsx", ".json", ".scss", ".sass"]
+    extensions: ['.js', '.jsx', '.json', '.scss', '.sass']
   },
 
   module: {
@@ -21,7 +22,7 @@ module.exports = {
         test: /\.css$/,
         use: [
           {
-            loader: "css-loader", // translates CSS into CommonJS
+            loader: 'css-loader', // translates CSS into CommonJS
             options: {
               sourceMap: true
             }
@@ -31,105 +32,76 @@ module.exports = {
       {
         test: /\.s[ac]ss$/,
         use: [
-          // Creates `style` nodes from JS strings
-          'style-loader',
-          // Translates CSS into CommonJS
-          'css-loader',
-          // Compiles Sass to CSS
-          'sass-loader',
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'bundle.css'
+            }
+          },
+          { loader: 'extract-loader' },
+          { loader: 'css-loader' },
+          {
+            loader: 'sass-loader',
+            options: {
+              module: true,
+              includePaths: ['./node_modules']
+            }
+          }
         ]
       },
-      // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
       {
-        test: /\.tsx?$/, 
-        loader: "awesome-typescript-loader", 
-        options: {
-          configFileName: './tsconfig.json'
-        } 
+        test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'font/'
+            }
+          }
+        ]
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
         loaders: [
-          'file-loader',
-          'image-webpack-loader?bypassOnDebug&optipng.optimizationLevel=7&gifsicle.interlaced=false',
+          'file-loader?hash=sha512&digest=hex&name=img/[hash].[ext]'
+          // 'image-webpack-loader?bypassOnDebug&optipng.optimizationLevel=7&gifsicle.interlaced=false'
         ]
       },
-      // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
-      { enforce: "pre", test: /\.js$/, loader: "source-map-loader" }
-    ]
-  },
-
-  // When importing a module whose path matches one of the following, just
-  // assume a corresponding global variable exists and use that instead.
-  // This is important because it allows us to avoid bundling all of our
-  // dependencies, which allows browsers to cache those libraries between builds.
-  externals: {
-    "react": "React",
-    "react-dom": "ReactDOM",
-    "react-router-dom": "ReactRouterDOM"
-  },
-};
-
-
-
-
-
-
-
-/***
- * 
-'use strict';
-
-
-const webpack = require('webpack');
-const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-
-const debug = process.env.NODE_ENV !== 'production';
-const entryName = 'app.js';
-
-module.exports = {
-  devtool: debug ? 'inline-sourcemap' : false,
-  entry: [path.resolve(__dirname, 'src', entryName), path.resolve(__dirname, 'src', 'static', 'style', 'main.scss')],
-  output: {
-    path: path.resolve(__dirname, 'public', 'dist'),
-    filename: 'bundle.js'
-  },
-  module: {
-    rules: [
       {
-        test: /\.s[ac]ss$/,
-        loader: ExtractTextPlugin.extract({
-          use: [{
-            loader: 'css-loader', options: {
-              sourceMap: true
+        test: /\.(mp4|mp3)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'vid/'
             }
-          }, {
-            loader: 'sass-loader', options: {
-              sourceMap: true
-            }
-          }]
-        })
+          }
+        ]
       },
       {
-        test: path.join(__dirname, 'src'),
+        test: /\.jsx?$/,
         include: [path.join(__dirname, 'src')],
         exclude: [/node_modules/, path.join(__dirname, 'src', 'static')],
         loader: 'babel-loader',
         options: {
-          presets: ["react", "stage-0", "es2015"],
-          plugins: ["transform-class-properties", "transform-decorators-legacy"]
+          presets: [
+            [
+              '@babel/preset-env',
+              {
+                modules: false,
+                useBuiltIns: 'entry',
+                corejs: '3.3.6'
+              },
+              '@babel/preset-react'
+            ]
+          ],
+          plugins: [
+            ['@babel/plugin-transform-react-jsx']
+          ]
         }
       }
     ]
-  },
-  devServer: {
-    contentBase: './public/'
-  },
-  plugins: [
-    new ExtractTextPlugin("bundle.css"),
-    // new UglifyJsPlugin()
-  ]
-};
- */
+  }
+}
