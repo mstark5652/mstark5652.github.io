@@ -1,7 +1,11 @@
 node_modules
+npm-debug.log
 *.log
 output/
+build/
 
+.vscode/
+.nyc_output/
 
 # Config
 

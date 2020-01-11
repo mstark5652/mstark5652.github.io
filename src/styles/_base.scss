@@ -1,0 +1,21 @@
+$background-color: #fff;
+$light-background-color: #eee;
+$dark-text-color: #333;
+$light-text-color: #fff;
+$base-font-family: 'Roboto', sans-serif;
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    padding: 0px;
+    overflow-x: hidden;
+}
+
+body {
+    background: $background-color;
+    color: $dark-text-color;
+    font-family: $base-font-family;
+    font-size: 18px;
+}
+  
