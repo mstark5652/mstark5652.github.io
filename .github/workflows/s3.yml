@@ -24,8 +24,8 @@ jobs:
       run: npm ci && npm i aws-sdk
     - name: Build
       run: npm run release
-    - name: Upload to s3
-      run: node ./scripts/publishS3.js upload
+    # - name: Upload to s3
+    #   run: node ./scripts/publishS3.js upload
       env:
         CI: true
         AWS_KEY: ${{ secrets.AWS_KEY }}
