@@ -36,19 +36,17 @@ const MixologistView = () => {
     >
       <Grid item xs={12} md={6}>
         <Card>
-          <CardActionArea>
-            <CardContent>
-              <Typography component='h3' variant='h4'>
-                Mixologist the Robotic Bartender
-              </Typography>
-            </CardContent>
-            <CardMedia
-              className={classes.media}
-              src={mixologist}
-              component='img'
-              title='Mixologist Robotic Bartender'
-            />
-          </CardActionArea>
+          <CardContent>
+            <Typography component='h3' variant='h4'>
+              Mixologist the Robotic Bartender
+            </Typography>
+          </CardContent>
+          <CardMedia
+            className={classes.media}
+            src={mixologist}
+            component='img'
+            title='Mixologist Robotic Bartender'
+          />
           <CardActions>
             <Button size='small' color='primary' href='https://www.mixologist.ai?cid=mstark'>
               Website
