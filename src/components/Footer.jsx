@@ -9,11 +9,11 @@ import InstagramIcon from '@material-ui/icons/Instagram'
 import { makeStyles } from '@material-ui/styles'
 import Grid from '@material-ui/core/Grid'
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles(({
   footer: {
     backgroundColor: 'gray',
     textAlign: 'center',
-    padding: 10
+    padding: '25px'
   }
 }))
 
