@@ -38,7 +38,7 @@ const CBRView = () => {
       <Grid item xs={12}>
         <Grid container justify='space-around'>
           <Grid item xs={12}>
-            <Typography component='h3' variant='h4'>
+            <Typography variant='h4'>
               Comic Book Realm Mobile Apps
             </Typography>
             <Typography variant='body1'>
@@ -72,6 +72,11 @@ const CBRView = () => {
             />
           </Grid>
         </Grid>
+      </Grid>
+      <Grid item xs={12}>
+        <Button size='small' color='primary' href='https://comicbookrealm.com'>
+          Website
+        </Button>
       </Grid>
     </Grid>
   )

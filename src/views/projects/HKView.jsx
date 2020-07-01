@@ -38,8 +38,8 @@ const HKView = () => {
       className={classes.root}
     >
       <Grid item xs={12} md={6}>
-        <Typography component='h3' variant='h4'>
-          Hedera 20 Hackathon Winner
+        <Typography variant='h4'>
+          Hedera20 Hackathon Winner
         </Typography>
         <CardMedia
           className={classes.media}
@@ -65,9 +65,9 @@ const HKView = () => {
         <Button size='small' color='primary' href='https://humankind.ly'>
           Website
         </Button>
-        <Button size='small' color='primary' href='https://www.hedera.com/blog/winners-of-hedera20-virtual-hackathon-chosen-from-over-800-competing-developers'>
+        {/* <Button size='small' color='primary' href='https://www.hedera.com/blog/winners-of-hedera20-virtual-hackathon-chosen-from-over-800-competing-developers'>
           Article
-        </Button>
+        </Button> */}
       </Grid>
     </Grid>
   )

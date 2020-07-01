@@ -5,8 +5,11 @@ import { makeStyles } from '@material-ui/styles'
 
 const useStyles = makeStyles(theme => ({
   paper: {
-    margin: theme.spacing(2),
-    padding: theme.spacing(3)
+    margin: theme.spacing(4),
+    padding: theme.spacing(3),
+    [theme.breakpoints.down('sm')]: {
+      margin: theme.spacing(2)
+    }
   }
 }))
 

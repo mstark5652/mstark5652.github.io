@@ -33,7 +33,7 @@ const MixologistView = () => {
       spacing={2}
     >
       <Grid item xs={12} md={6}>
-        <Typography component='h3' variant='h4'>
+        <Typography variant='h4'>
           Mixologist - The Robotic Bartender
         </Typography>
         <Typography variant='body1'>

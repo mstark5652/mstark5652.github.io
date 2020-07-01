@@ -32,8 +32,8 @@ const HackMidwestView = () => {
       spacing={2}
     >
       <Grid item xs={12} md={6}>
-        <Typography component='h3' variant='h4'>
-          2018 HackMidwest Winner!
+        <Typography variant='h4'>
+          HackMidwest 2018 Winner
         </Typography>
         <CardMedia
           className={classes.media}
