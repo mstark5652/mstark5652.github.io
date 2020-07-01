@@ -1,10 +1,11 @@
 import React from 'react'
+import Container from '@material-ui/core/Container'
 
-const Layout = props => {
+const Layout = ({ children }) => {
   return (
-    <div className='app-container'>
-      <div className='app-content'>{props.children}</div>
-    </div>
+    <Container maxWidth='lg' disableGutters>
+      {children}
+    </Container>
   )
 }
 
