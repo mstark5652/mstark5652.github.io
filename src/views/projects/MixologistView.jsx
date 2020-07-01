@@ -1,11 +1,11 @@
 import React from 'react'
 
 import Typography from '@material-ui/core/Typography'
-import Button from '@material-ui/core/Button'
 import Grid from '@material-ui/core/Grid'
 import CardMedia from '@material-ui/core/CardMedia'
 
 import { makeStyles } from '@material-ui/styles'
+import CtaButton from '../../components/CtaButton'
 
 const mixologist = 'build/' + require('../../img/mixologist.jpg')
 
@@ -49,15 +49,9 @@ const MixologistView = () => {
         />
       </Grid>
       <Grid item xs={12}>
-        <Button size='small' color='primary' href='https://www.mixologist.ai?cid=mstark'>
-          Website
-        </Button>
-        <Button size='small' color='primary' href='https://www.dimin.com/blog/creative-tech-kc-the-future-will-have-robot-bartenders/'>
-          Article
-        </Button>
-        <Button size='small' color='primary' href='https://www.instagram.com/p/B9YEOoRn4IJ/?utm_source=ig_web_button_share_sheet'>
-          Video
-        </Button>
+        <CtaButton text='Drink Up' to='https://www.mixologist.ai?cid=mstark' />
+        {/* <CtaButton text='Article Post' to='https://www.dimin.com/blog/creative-tech-kc-the-future-will-have-robot-bartenders/' /> */}
+        {/* <CtaButton text='Watch a video' to='https://www.instagram.com/p/B9YEOoRn4IJ/' /> */}
       </Grid>
     </Grid>
   )

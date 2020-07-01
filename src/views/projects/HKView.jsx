@@ -1,11 +1,11 @@
 import React from 'react'
 
 import Typography from '@material-ui/core/Typography'
-import Button from '@material-ui/core/Button'
 import Grid from '@material-ui/core/Grid'
 import CardMedia from '@material-ui/core/CardMedia'
 
 import { makeStyles } from '@material-ui/styles'
+import CtaButton from '../../components/CtaButton'
 
 const useStyles = makeStyles(theme => ({
   media: {
@@ -59,15 +59,9 @@ const HKView = () => {
         <Typography variant='body1'>
           HumanKind is a decentralized marketplace that aggregates, sponsors and rewards altruistic behavior and random acts of kindness, giving back to the communities, businesses and charities you care about. Essentially, the kinder you are, the more you—and the community you are a part of—get back.
         </Typography>
-        <Button size='small' color='primary' href='https://www.intouchsol.com/blog/intouchers-win-big-in-the-hedera20-hackathon'>
-          Article
-        </Button>
-        <Button size='small' color='primary' href='https://humankind.ly'>
-          Website
-        </Button>
-        {/* <Button size='small' color='primary' href='https://www.hedera.com/blog/winners-of-hedera20-virtual-hackathon-chosen-from-over-800-competing-developers'>
-          Article
-        </Button> */}
+        {/* <CtaButton text='Article Post' to='https://www.intouchsol.com/blog/intouchers-win-big-in-the-hedera20-hackathon' /> */}
+        <CtaButton text='Be HumanKind' to='https://humankind.ly' />
+        {/* https://www.hedera.com/blog/winners-of-hedera20-virtual-hackathon-chosen-from-over-800-competing-developers */}
       </Grid>
     </Grid>
   )

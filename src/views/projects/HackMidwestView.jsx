@@ -1,11 +1,11 @@
 import React from 'react'
 
 import Typography from '@material-ui/core/Typography'
-import Button from '@material-ui/core/Button'
 import Grid from '@material-ui/core/Grid'
 import CardMedia from '@material-ui/core/CardMedia'
 
 import { makeStyles } from '@material-ui/styles'
+import CtaButton from '../../components/CtaButton'
 
 const useHackStyles = makeStyles({
   root: {
@@ -52,9 +52,7 @@ const HackMidwestView = () => {
         <Typography variant='body1'>
           Welcome to the Neighborhood. A hyper-local, real-time, real-life network and exchange made up of your actual neighbors that rewards "neighborly" acts of kindness and brings us all closer together.
         </Typography>
-        <Button size='small' color='primary' href='https://www.intouchsol.com/blog/intouch-team-wins-big-hack-midwest-competition/'>
-          Article
-        </Button>
+        <CtaButton text='Be Neighborly' to='https://www.intouchsol.com/blog/intouch-team-wins-big-hack-midwest-competition/' />
       </Grid>
     </Grid>
   )

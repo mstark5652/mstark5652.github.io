@@ -6,6 +6,7 @@ import Grid from '@material-ui/core/Grid'
 import CardMedia from '@material-ui/core/CardMedia'
 
 import { makeStyles } from '@material-ui/styles'
+import CtaButton from '../../components/CtaButton'
 
 const useHackStyles = makeStyles(theme => ({
   root: {
@@ -74,9 +75,7 @@ const CBRView = () => {
         </Grid>
       </Grid>
       <Grid item xs={12}>
-        <Button size='small' color='primary' href='https://comicbookrealm.com'>
-          Website
-        </Button>
+        <CtaButton text='Explore' to='https://comicbookrealm.com' />
       </Grid>
     </Grid>
   )
