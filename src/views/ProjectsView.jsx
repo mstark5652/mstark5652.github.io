@@ -1,10 +1,12 @@
-import * as React from 'react'
+import React from 'react'
 
 import Typography from '@material-ui/core/Typography'
 
-import HackMidwestView from './HackMidwestView'
-import MixologistView from './MixologistView'
-import CBRView from './CBRView'
+import ProjectCard from '../components/ProjectCard'
+import HackMidwestView from './projects/HackMidwestView'
+import MixologistView from './projects/MixologistView'
+import CBRView from './projects/CBRView'
+import HKView from './projects/HKView'
 
 import { makeStyles } from '@material-ui/styles'
 
@@ -27,13 +29,10 @@ const ProjectsView = () => {
       <Typography className={classes.header} component='h2'>
         Projects
       </Typography>
-      <br />
-      <HackMidwestView />
-      <br />
-      <MixologistView />
-      <br />
-      <CBRView />
-      <br />
+      <ProjectCard component={<HKView />} />
+      <ProjectCard component={<MixologistView />} />
+      <ProjectCard component={<HackMidwestView />} />
+      <ProjectCard component={<CBRView />} />
       <br />
     </div>
   )
