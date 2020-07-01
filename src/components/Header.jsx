@@ -1,26 +1,26 @@
 import React from 'react'
-import { Typography, Avatar } from '@material-ui/core'
+import Container from '@material-ui/core/Container'
+import Grid from '@material-ui/core/Grid'
+import Typography from '@material-ui/core/Typography'
+import CardMedia from '@material-ui/core/CardMedia'
 import { makeStyles } from '@material-ui/styles'
 
 const useStyles = makeStyles(theme => ({
   header: {
     backgroundColor: theme.palette.primary.main,
-    textAlign: 'center',
-    padding: 5
+    padding: theme.spacing(4)
   },
-  title: {
-    marginTop: '5px',
-    fontSize: '36px',
-    fontWeight: 'bold'
-  },
-  subtitle: {
-    fontSize: '24px'
+  content: {
+    textAlign: 'center'
   },
   avatar: {
-    margin: 'auto',
-    marginBottom: '5px',
-    width: '100px',
-    height: '100px'
+    '& img': {
+      margin: 'auto',
+      border: '1px solid transparent',
+      borderRadius: '25px',
+      width: '200px',
+      height: '200px'
+    }
   }
 }))
 
@@ -30,20 +30,42 @@ const Header = () => {
   const classes = useStyles()
   return (
     <header className={classes.header}>
-      <Typography className={classes.title} component='h1' type='title'>
-        Michael Stark
-      </Typography>
-      <br />
-      <Typography className={classes.subtitle} component='h2' type='title'>
-        Software Engineer
-      </Typography>
-      <br />
-      <Avatar
-        className={classes.avatar}
-        src={profile}
-        alt='Profile Picture'
-        title='Profile Picture'
-      />
+      <Container
+        maxWidth='lg' disableGutters
+      >
+        <Grid
+          container spacing={1}
+          justify='center'
+          alignItems='center'
+        >
+          <Grid
+            item xs={12} sm={6}
+            className={classes.avatar}
+          >
+            <CardMedia
+              src={profile}
+              component='img'
+              title='Profile Picture'
+            />
+          </Grid>
+          <Grid
+            item xs={12} sm={6}
+            className={classes.content}
+          >
+            <Typography variant='h1'>
+              Michael Stark
+            </Typography>
+            <Typography variant='h2'>
+              Software Engineer
+            </Typography>
+            <Typography variant='body1'>
+              Experienced engineer skilled in full stack development, natural language processing, and text classification. With a passion for learning and building new things.
+            </Typography>
+          </Grid>
+
+        </Grid>
+        <br />
+      </Container>
     </header>
   )
 }
