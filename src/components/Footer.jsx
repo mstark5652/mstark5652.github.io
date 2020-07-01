@@ -28,23 +28,23 @@ const Footer = () => {
         spacing={2}
       >
         <Grid item>
-          <Button size='small' href='https://github.com/mstark5652'>
-            <GitHubIcon color='secondary' />
+          <Button href='https://github.com/mstark5652'>
+            <GitHubIcon fontSize='large' color='secondary' />
           </Button>
         </Grid>
         <Grid item>
-          <Button size='small' href='https://www.instagram.com/m.stark5652/'>
-            <InstagramIcon color='secondary' />
+          <Button href='https://www.instagram.com/m.stark5652/'>
+            <InstagramIcon fontSize='large' color='secondary' />
           </Button>
         </Grid>
         <Grid item>
-          <Button size='small' href='https://www.linkedin.com/in/michaelstark5652'>
-            <LinkedInIcon color='secondary' />
+          <Button href='https://www.linkedin.com/in/michaelstark5652'>
+            <LinkedInIcon fontSize='large' color='secondary' />
           </Button>
         </Grid>
         <Grid item>
-          <Button size='small' href='mailto:mstark5652@gmail.com'>
-            <MailOutlineIcon color='secondary' />
+          <Button href='mailto:mstark5652@gmail.com'>
+            <MailOutlineIcon fontSize='large' color='secondary' />
           </Button>
         </Grid>
         <Grid item xs={12}>
