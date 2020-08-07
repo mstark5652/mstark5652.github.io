@@ -1,6 +1,18 @@
 import { createMuiTheme } from '@material-ui/core/styles'
 
 const theme = createMuiTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 960,
+      lg: 1280,
+      xl: 1920
+    }
+  }
+})
+
+const customTheme = createMuiTheme({
   palette: {
     primary: { main: '#2fabb4' },
     secondary: { main: '#ffffff' }
@@ -15,29 +27,44 @@ const theme = createMuiTheme({
     h1: {
       fontSize: '34px',
       fontWeight: 'normal',
-      color: '#4a4a4a'
+      color: '#4a4a4a',
+      [theme.breakpoints.down('sm')]: {
+        fontSize: '30px'
+      }
     },
     h2: {
       fontSize: '35px',
       fontWeight: 'bold',
-      color: '#4a4a4a'
+      color: '#4a4a4a',
+      [theme.breakpoints.down('sm')]: {
+        fontSize: '31px'
+      }
     },
     h3: {
       fontSize: '30px',
       fontWeight: 'normal',
-      color: '#4a4a4a'
+      color: '#4a4a4a',
+      [theme.breakpoints.down('sm')]: {
+        fontSize: '26px'
+      }
     },
     h4: {
       fontSize: '32px',
       fontWeight: 'normal',
-      color: '#4a4a4a'
+      color: '#4a4a4a',
+      [theme.breakpoints.down('sm')]: {
+        fontSize: '28px'
+      }
     },
     body1: {
       fontSize: '20px',
       fontWeight: 'lighter',
-      color: '#4a4a4a'
+      color: '#4a4a4a',
+      [theme.breakpoints.down('sm')]: {
+        fontSize: '16px'
+      }
     }
   }
 })
 
-export default theme
+export default customTheme

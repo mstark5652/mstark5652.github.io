@@ -1,15 +1,13 @@
 import React from 'react'
 
 import Typography from '@material-ui/core/Typography'
+import Grid from '@material-ui/core/Grid'
 
 import ProjectCard from '../components/ProjectCard'
-import HackMidwestView from './projects/HackMidwestView'
-import MixologistView from './projects/MixologistView'
-import CBRView from './projects/CBRView'
-import HKView from './projects/HKView'
 
 import { makeStyles } from '@material-ui/styles'
 import theme from '../common/theme'
+import projects from '../common/projects'
 
 const useStyles = makeStyles({
   header: {
@@ -28,13 +26,19 @@ const ProjectsView = () => {
       <Typography className={classes.header} component='h3'>
         Projects
       </Typography>
-      <ProjectCard component={<MixologistView />} />
-      <ProjectCard component={<CBRView />} />
-      <Typography className={classes.header} component='h3'>
-        Hackathons
-      </Typography>
-      <ProjectCard component={<HKView />} />
-      <ProjectCard component={<HackMidwestView />} />
+      <Grid
+        container
+        justify='center'
+        alignItems='center'
+      >
+        {projects.map((item, idx) => (
+          <Grid key={idx} item xs={12} sm={6}>
+            <ProjectCard
+              {...item}
+            />
+          </Grid>
+        ))}
+      </Grid>
       <br />
     </div>
   )
