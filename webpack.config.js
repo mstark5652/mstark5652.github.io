@@ -2,7 +2,7 @@ const path = require('path')
 const debug = process.env.NODE_ENV !== 'production'
 
 module.exports = {
-  entry: ['@babel/polyfill', path.resolve(__dirname, 'src', 'index.js')],
+  entry: [path.resolve(__dirname, 'src', 'index.js')],
   mode: debug ? 'development' : 'production',
   output: {
     path: path.resolve(__dirname, 'build'),
@@ -11,7 +11,10 @@ module.exports = {
 
   // Enable sourcemaps for debugging webpack's output.
   devtool: debug ? 'source-map' : false,
-
+  devServer: {
+    contentBase: './',
+    hot: true
+  },
   resolve: {
     extensions: ['.js', '.jsx', '.json', '.scss', '.sass']
   },
