@@ -1,7 +1,7 @@
 {
   "name": "mstark5652site",
   "productName": "mstark5652 Github Site",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Personal website.",
   "main": "index.js",
   "repository": {
@@ -32,7 +32,7 @@
     "file-loader": "^4.2.0",
     "image-webpack-loader": "^6.0.0",
     "mime": "^2.4.4",
-    "node-sass": "^4.13.1",
+    "node-sass": "^4.14.1",
     "sass-loader": "^7.3.1",
     "source-map-loader": "^0.2.4",
     "standard": "^14.3.3",
