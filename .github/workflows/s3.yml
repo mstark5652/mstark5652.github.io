@@ -24,6 +24,10 @@ jobs:
       run: npm ci
     - name: Build
       run: npm run release
+    - name: Tag repo
+      run: npm i @actions/github@4.0.0 && node ./scripts/tagRepo.js
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Upload to s3
       run: node ./scripts/publishS3.js upload
       env:
