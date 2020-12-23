@@ -1,7 +1,7 @@
 {
   "name": "mstark5652site",
   "productName": "mstark5652 Github Site",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Personal website.",
   "main": "index.js",
   "repository": {
@@ -13,14 +13,14 @@
   "scripts": {
     "start": "rewp build --watch",
     "build": "rewp build",
-    "release": "NODE_ENV=production && npm run build",
+    "release": "export NODE_ENV=production && npm run build",
     "lint": "standard ./src/**/*.js",
     "lint:fix": "standard ./src/**/*.js --fix"
   },
   "devDependencies": {
     "aws-sdk": "^2.760.0",
     "mime": "^2.4.6",
-    "rewp": "^0.3.2",
+    "rewp": "^0.4.0",
     "standard": "^14.3.4"
   },
   "dependencies": {
