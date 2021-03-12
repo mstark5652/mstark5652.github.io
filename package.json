@@ -1,7 +1,7 @@
 {
   "name": "mstark5652site",
   "productName": "mstark5652 Github Site",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "Personal website.",
   "main": "index.js",
   "repository": {
