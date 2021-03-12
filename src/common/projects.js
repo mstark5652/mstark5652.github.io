@@ -12,6 +12,19 @@ export default [
     }
   },
   {
+    title: 'RightRoom',
+    description: 'RightRoom is software that enables attendees to enter a simulated room and fluidly engage in one-on-one and group video conversations.',
+    link: {
+      text: 'Join the Conversation',
+      to: 'https://rightroom.io'
+    },
+    img: {
+      src: 'build/' + require('../img/rr_chat.png'),
+      title: 'RightRoom Chat',
+      style: { maxWidth: 500 }
+    }
+  },
+  {
     title: '',
     description: 'HumanKind is a decentralized marketplace that aggregates, sponsors and rewards altruistic behavior and random acts of kindness, giving back to the communities, businesses and charities you care about. Essentially, the kinder you are, the more you—and the community you are a part of—get back. My team started working on this at the Hedera20 hackathon where we walked away with multiple prizes.',
     link: {
