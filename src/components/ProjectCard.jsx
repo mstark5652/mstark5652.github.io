@@ -47,6 +47,7 @@ const ProjectCard = ({ title, description, link, img }) => {
         src={img.src}
         component='img'
         title={img.title}
+        style={img.style || {}}
       />
       <Typography variant='h4'>{title}</Typography>
       <Typography variant='body1'>{description}</Typography>
