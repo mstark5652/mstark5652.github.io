@@ -1,5 +1,6 @@
 import React from 'react'
-import { ThemeProvider } from '@material-ui/styles'
+import CssBaseline from '@mui/material/CssBaseline'
+import { ThemeProvider } from '@mui/material/styles'
 
 import theme from './common/theme'
 
@@ -10,6 +11,7 @@ import ProjectsView from './views/ProjectsView'
 
 const AppContainer = () => (
   <ThemeProvider theme={theme}>
+    <CssBaseline />
     <Header />
     <Layout>
       <ProjectsView />

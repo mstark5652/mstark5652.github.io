@@ -3,12 +3,12 @@
   "productName": "mstark5652 Github Site",
   "version": "1.1.0",
   "description": "Personal website.",
-  "main": "index.js",
+  "main": "src/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/mstark5652/mstark5652.github.io"
   },
-  "author": "mstark",
+  "author": "mstark5652",
   "license": "SEE LICENSE IN LICENSE.md",
   "scripts": {
     "start": "rewp build --watch",
@@ -18,16 +18,19 @@
     "lint:fix": "standard ./src/**/*.js --fix"
   },
   "devDependencies": {
-    "aws-sdk": "^2.760.0",
-    "mime": "^2.4.6",
-    "rewp": "^0.4.3",
-    "standard": "^14.3.4"
+    "aws-sdk": "^2.1049.0",
+    "mime": "^2.6.0",
+    "rewp": "^0.6.1",
+    "standard": "^16.0.4"
   },
   "dependencies": {
-    "@material-ui/core": "^4.11.0",
-    "@material-ui/icons": "^4.9.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-router-dom": "^5.2.0"
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "@mui/icons-material": "^5.2.5",
+    "@mui/material": "^5.2.6",
+    "@mui/styles": "^5.2.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^6.2.1"
   }
 }

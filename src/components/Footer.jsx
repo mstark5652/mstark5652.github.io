@@ -1,13 +1,15 @@
 import React from 'react'
-import Typography from '@material-ui/core/Typography'
-import Button from '@material-ui/core/Button'
-import MailOutlineIcon from '@material-ui/icons/MailOutline'
-import GitHubIcon from '@material-ui/icons/GitHub'
-import LinkedInIcon from '@material-ui/icons/LinkedIn'
-import InstagramIcon from '@material-ui/icons/Instagram'
 
-import { makeStyles } from '@material-ui/styles'
-import Grid from '@material-ui/core/Grid'
+import Grid from '@mui/material/Grid'
+import Typography from '@mui/material/Typography'
+import Button from '@mui/material/Button'
+
+import MailOutlineIcon from '@mui/icons-material/MailOutline'
+import GitHubIcon from '@mui/icons-material/GitHub'
+import LinkedInIcon from '@mui/icons-material/LinkedIn'
+import InstagramIcon from '@mui/icons-material/Instagram'
+
+import makeStyles from '@mui/styles/makeStyles'
 
 const useStyles = makeStyles(({
   footer: {
@@ -23,7 +25,7 @@ const Footer = () => {
     <footer className={classes.footer}>
       <Grid
         container
-        justify='center'
+        justifyContent='center'
         alignItems='center'
         spacing={2}
       >

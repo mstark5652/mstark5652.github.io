@@ -1,9 +1,9 @@
 import React from 'react'
-import Container from '@material-ui/core/Container'
-import Grid from '@material-ui/core/Grid'
-import Typography from '@material-ui/core/Typography'
-import CardMedia from '@material-ui/core/CardMedia'
-import { makeStyles } from '@material-ui/styles'
+import Container from '@mui/material/Container'
+import Grid from '@mui/material/Grid'
+import Typography from '@mui/material/Typography'
+import CardMedia from '@mui/material/CardMedia'
+import makeStyles from '@mui/styles/makeStyles'
 
 const useStyles = makeStyles(theme => ({
   header: {
@@ -24,10 +24,11 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const profile = 'build/' + require('../img/me.jpg')
+const profile = require('../img/me.jpg')
 
 const Header = () => {
   const classes = useStyles()
+  console.log('profile image', profile)
   return (
     <header className={classes.header}>
       <Container
