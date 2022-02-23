@@ -1,13 +1,17 @@
 import React from 'react'
-import Typography from '@material-ui/core/Typography'
-import Button from '@material-ui/core/Button'
-import MailOutlineIcon from '@material-ui/icons/MailOutline'
-import GitHubIcon from '@material-ui/icons/GitHub'
-import LinkedInIcon from '@material-ui/icons/LinkedIn'
-import InstagramIcon from '@material-ui/icons/Instagram'
 
-import { makeStyles } from '@material-ui/styles'
-import Grid from '@material-ui/core/Grid'
+import Grid from '@mui/material/Grid'
+import Typography from '@mui/material/Typography'
+import Button from '@mui/material/Button'
+
+import MailOutlineIcon from '@mui/icons-material/MailOutline'
+import GitHubIcon from '@mui/icons-material/GitHub'
+import LinkedInIcon from '@mui/icons-material/LinkedIn'
+import InstagramIcon from '@mui/icons-material/Instagram'
+
+import makeStyles from '@mui/styles/makeStyles'
+
+import strings from '../common/strings'
 
 const useStyles = makeStyles(({
   footer: {
@@ -23,33 +27,33 @@ const Footer = () => {
     <footer className={classes.footer}>
       <Grid
         container
-        justify='center'
+        justifyContent='center'
         alignItems='center'
         spacing={2}
       >
         <Grid item>
-          <Button href='https://github.com/mstark5652'>
+          <Button href={strings.footer.github}>
             <GitHubIcon fontSize='large' color='secondary' />
           </Button>
         </Grid>
         <Grid item>
-          <Button href='https://www.instagram.com/m.stark5652/'>
+          <Button href={strings.footer.instagram}>
             <InstagramIcon fontSize='large' color='secondary' />
           </Button>
         </Grid>
         <Grid item>
-          <Button href='https://www.linkedin.com/in/michaelstark5652'>
+          <Button href={strings.footer.linkedin}>
             <LinkedInIcon fontSize='large' color='secondary' />
           </Button>
         </Grid>
         <Grid item>
-          <Button href='mailto:mstark5652@gmail.com'>
+          <Button href={strings.footer.email}>
             <MailOutlineIcon fontSize='large' color='secondary' />
           </Button>
         </Grid>
         <Grid item xs={12}>
           <Typography component='p' variant='h5' color='secondary'>
-            Michael Stark
+            {strings.footer.title}
           </Typography>
         </Grid>
       </Grid>

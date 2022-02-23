@@ -1,5 +1,17 @@
 export default [
   {
+    title: 'Your Personal Connection to Health',
+    description: 'haley is a social platform connecting verified clinicians and clinician produced content with consumers.',
+    link: {
+      text: 'Connect',
+      to: 'https://forhaley.com?cid=mstark.dev'
+    },
+    img: {
+      src: require('../img/boxhaley-green.png'),
+      title: 'haley'
+    }
+  },
+  {
     title: 'Mixologist - The Robotic Bartender',
     description: 'Mixologist is the world\'s first voice-powered robotic bartender that uses natural language to take your order and serve your favorite mixed drinks.',
     link: {
@@ -7,7 +19,7 @@ export default [
       to: 'https://www.mixologist.ai?cid=mstark.dev'
     },
     img: {
-      src: 'build/' + require('../img/mix_cosmo.png'),
+      src: require('../img/mix_cosmo.png'),
       title: 'Cosmo Mixologist'
     }
   },
@@ -19,7 +31,7 @@ export default [
       to: 'https://rightroom.io'
     },
     img: {
-      src: 'build/' + require('../img/rr_chat.png'),
+      src: require('../img/rr_chat.png'),
       title: 'RightRoom Chat',
       style: { maxWidth: 500 }
     }
@@ -32,7 +44,7 @@ export default [
       to: 'https://humankind.ly'
     },
     img: {
-      src: 'build/' + require('../img/hk_logo.png'),
+      src: require('../img/hk_logo.png'),
       title: 'HumanKind Logo'
     }
   },
@@ -44,7 +56,7 @@ export default [
       to: 'https://comicbookrealm.com'
     },
     img: {
-      src: 'build/' + require('../img/cbr_screens.png'),
+      src: require('../img/cbr_screens.png'),
       title: 'App Screenshots'
     }
   },
@@ -56,7 +68,7 @@ export default [
       to: 'https://www.intouchsol.com/blog/intouch-team-wins-big-hack-midwest-competition/'
     },
     img: {
-      src: 'build/' + require('../img/neighborhood_alexa.png'),
+      src: require('../img/neighborhood_alexa.png'),
       title: 'Alexa device and phone'
     }
   }

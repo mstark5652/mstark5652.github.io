@@ -1,18 +1,19 @@
 import React from 'react'
 
-import Typography from '@material-ui/core/Typography'
-import Grid from '@material-ui/core/Grid'
+import Typography from '@mui/material/Typography'
+import Grid from '@mui/material/Grid'
+import makeStyles from '@mui/styles/makeStyles'
 
 import ProjectCard from '../components/ProjectCard'
 
-import { makeStyles } from '@material-ui/styles'
 import theme from '../common/theme'
 import projects from '../common/projects'
+import strings from '../common/strings'
 
 const useStyles = makeStyles({
   header: {
     textAlign: 'center',
-    margin: theme.spacing(6, 0, 2, 0),
+    margin: theme.spacing(4, 0, 2, 0),
     [theme.breakpoints.down('sm')]: {
       margin: theme.spacing(2, 0)
     }
@@ -23,16 +24,18 @@ const ProjectsView = () => {
   const classes = useStyles()
   return (
     <div className='projects-container'>
-      <Typography className={classes.header} component='h3'>
-        Projects
-      </Typography>
+      <div className={classes.header}>
+        <Typography variant='h3'>
+          {strings.projects.title}
+        </Typography>
+      </div>
       <Grid
         container
-        justify='center'
+        justifyContent='center'
         alignItems='center'
       >
         {projects.map((item, idx) => (
-          <Grid key={idx} item xs={12} sm={6}>
+          <Grid key={idx} item sm={12} md={6}>
             <ProjectCard
               {...item}
             />

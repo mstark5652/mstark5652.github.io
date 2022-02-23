@@ -1,9 +1,12 @@
 import React from 'react'
-import Container from '@material-ui/core/Container'
-import Grid from '@material-ui/core/Grid'
-import Typography from '@material-ui/core/Typography'
-import CardMedia from '@material-ui/core/CardMedia'
-import { makeStyles } from '@material-ui/styles'
+
+import Container from '@mui/material/Container'
+import Grid from '@mui/material/Grid'
+import Typography from '@mui/material/Typography'
+import CardMedia from '@mui/material/CardMedia'
+import makeStyles from '@mui/styles/makeStyles'
+
+import strings from '../common/strings'
 
 const useStyles = makeStyles(theme => ({
   header: {
@@ -24,10 +27,11 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const profile = 'build/' + require('../img/me.jpg')
+const profile = require('../img/me.jpg')
 
 const Header = () => {
   const classes = useStyles()
+
   return (
     <header className={classes.header}>
       <Container
@@ -53,13 +57,13 @@ const Header = () => {
             className={classes.content}
           >
             <Typography variant='h1'>
-              Michael Stark
+              {strings.header.name}
             </Typography>
             <Typography variant='h2'>
-              Software Engineer
+              {strings.header.title}
             </Typography>
             <Typography variant='body1'>
-              Experienced engineer skilled in full stack development, natural language processing, and text classification. With a passion for learning and building new things.
+              {strings.header.description}
             </Typography>
           </Grid>
 
