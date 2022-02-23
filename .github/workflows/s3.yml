@@ -8,26 +8,28 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-18.04
-
-    strategy:
-      matrix:
-        node-version: [12.x]
+    runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node-version }}
+    - uses: actions/checkout@v2
+    - name: Use Node.js 14.x
       uses: actions/setup-node@v1
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: 14.x
     - name: Install dependencies
       run: npm ci
     - name: Build
       run: npm run release
+    - name: Get build version
+      id: get-build-version
+      run: echo "::set-output name=build-version::$(node -p "require('./package.json').version")"
+      shell: bash
     - name: Tag repo
-      run: npm i @actions/github@4.0.0 && node ./scripts/tagRepo.js
-      env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      uses: mstark5652/tag-repo@v0.2.0
+      with:
+        gh-token: ${{ secrets.GITHUB_TOKEN }}
+        build-version: ${{ steps.get-build-version.outputs.build-version }}
+        build-message: 'New release'
     - name: Upload to s3
       run: node ./scripts/publishS3.js upload
       env:
