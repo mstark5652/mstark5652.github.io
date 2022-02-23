@@ -11,6 +11,8 @@ import InstagramIcon from '@mui/icons-material/Instagram'
 
 import makeStyles from '@mui/styles/makeStyles'
 
+import strings from '../common/strings'
+
 const useStyles = makeStyles(({
   footer: {
     backgroundColor: 'gray',
@@ -30,28 +32,28 @@ const Footer = () => {
         spacing={2}
       >
         <Grid item>
-          <Button href='https://github.com/mstark5652'>
+          <Button href={strings.footer.github}>
             <GitHubIcon fontSize='large' color='secondary' />
           </Button>
         </Grid>
         <Grid item>
-          <Button href='https://www.instagram.com/m.stark5652/'>
+          <Button href={strings.footer.instagram}>
             <InstagramIcon fontSize='large' color='secondary' />
           </Button>
         </Grid>
         <Grid item>
-          <Button href='https://www.linkedin.com/in/michaelstark5652'>
+          <Button href={strings.footer.linkedin}>
             <LinkedInIcon fontSize='large' color='secondary' />
           </Button>
         </Grid>
         <Grid item>
-          <Button href='mailto:mstark5652@gmail.com'>
+          <Button href={strings.footer.email}>
             <MailOutlineIcon fontSize='large' color='secondary' />
           </Button>
         </Grid>
         <Grid item xs={12}>
           <Typography component='p' variant='h5' color='secondary'>
-            Michael Stark
+            {strings.footer.title}
           </Typography>
         </Grid>
       </Grid>

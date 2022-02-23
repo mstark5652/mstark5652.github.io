@@ -2,12 +2,13 @@ import React from 'react'
 
 import Typography from '@mui/material/Typography'
 import Grid from '@mui/material/Grid'
+import makeStyles from '@mui/styles/makeStyles'
 
 import ProjectCard from '../components/ProjectCard'
 
-import makeStyles from '@mui/styles/makeStyles'
 import theme from '../common/theme'
 import projects from '../common/projects'
+import strings from '../common/strings'
 
 const useStyles = makeStyles({
   header: {
@@ -25,7 +26,7 @@ const ProjectsView = () => {
     <div className='projects-container'>
       <div className={classes.header}>
         <Typography variant='h3'>
-          Projects
+          {strings.projects.title}
         </Typography>
       </div>
       <Grid
