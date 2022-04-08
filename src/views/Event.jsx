@@ -68,7 +68,7 @@ const avatars = {
 const people = [
   require('../img/avatars.png'),
   require('../img/avatars-1.png'),
-  require('../img/avatars-2.png')
+  'https://media-exp1.licdn.com/dms/image/C4E03AQE_8rvzJH1rSw/profile-displayphoto-shrink_200_200/0/1634082289713?e=1654732800&v=beta&t=9vQJDz0zVIovKHo1-B7GCChOUow0Ydo1zwMjeVMMDqU'
   // 'https://mui.com/static/images/avatar/1.jpg',
   // 'https://mui.com/static/images/avatar/2.jpg',
   // 'https://mui.com/static/images/avatar/3.jpg',
