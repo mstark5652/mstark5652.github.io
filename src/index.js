@@ -7,10 +7,9 @@ import EventContainer from './EventContainer'
 import './styles/main'
 
 if (typeof window !== 'undefined') {
-  const main = document.getElementById('main')
-  if (!main) {
+  if (document.title === 'Crema Event') {
     window.onload = () => {
-      ReactDOM.render(<EventContainer />, document.getElementById('root'))
+      ReactDOM.render(<EventContainer />, document.getElementById('main'))
     }
   } else {
     window.onload = () => {

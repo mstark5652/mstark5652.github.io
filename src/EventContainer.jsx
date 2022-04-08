@@ -3,7 +3,7 @@ import CssBaseline from '@mui/material/CssBaseline'
 import Container from '@mui/material/Container'
 import { ThemeProvider } from '@mui/material/styles'
 
-import theme from './common/theme'
+import theme from './common/cremaTheme'
 
 import Event from './views/Event'
 
