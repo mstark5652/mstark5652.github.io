@@ -94,13 +94,25 @@ const Event = () => {
           </Box>
         </Box>
       </Grow>
-      <Divider variant='fullWidth' />
       <Grow in timeout={500}>
         <Box className={classes.event}>
-          <p style={{ margin: 16, fontSize: 35, fontWeight: 'bold' }}>Upcoming Event in KC</p>
-          {/* <div style={{ marginTop: 16, marginBottom: 16 }}>
-            <Typography variant='h3' component='h2' style={{ color: 'white', backgroundColor: '#065E5D', padding: 8, width: '100%', textAlign: 'center' }}>Upcoming Event</Typography>
-          </div> */}
+          <div style={{ position: 'relative', textAlign: 'center' }}>
+            <img src={require('../img/bar.png')} style={{ width: '100%' }} />
+            <p style={{
+              padding: 16,
+              fontSize: 28,
+              fontWeight: 'bold',
+              color: 'white',
+              position: 'absolute',
+              top: 5,
+              left: 0,
+              right: 0,
+              backgroundColor: '#00000094'
+            }}
+            >
+              Upcoming Event in KC
+            </p>
+          </div>
           <Box m={2} display='flex' alignItems='center' justifyContent='space-around'>
             <EventIcon sx={{ fontSize: 70 }} />
             <Box>
@@ -125,6 +137,7 @@ const Event = () => {
           </Box>
         </Box>
       </Grow>
+      <Divider variant='fullWidth' />
       <Grow in timeout={1000}>
         <Box>
           <Typography m={2} variant='h3' component='h2'>Presented By</Typography>
