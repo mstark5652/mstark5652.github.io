@@ -5,7 +5,6 @@ import Typography from '@mui/material/Typography'
 import Link from '@mui/material/Link'
 import Button from '@mui/material/Button'
 import Grow from '@mui/material/Grow'
-import Divider from '@mui/material/Divider'
 import AvatarGroup from '@mui/material/AvatarGroup'
 import Avatar from '@mui/material/Avatar'
 
@@ -137,7 +136,6 @@ const Event = () => {
           </Box>
         </Box>
       </Grow>
-      <Divider variant='fullWidth' />
       <Grow in timeout={1000}>
         <Box>
           <Typography m={2} variant='h3' component='h2'>Presented By</Typography>
