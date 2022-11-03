@@ -15,7 +15,7 @@ const theme = createTheme({
 const customTheme = createTheme({
   palette: {
     mode: 'light',
-    primary: { main: '#2fabb4' },
+    primary: { main: '#005781' },
     secondary: { main: '#ffffff' }
   },
   typography: {
@@ -26,19 +26,19 @@ const customTheme = createTheme({
     ].join(','),
     fontStyle: 'normal',
     h1: {
-      fontSize: '34px',
-      fontWeight: 'normal',
-      color: '#4a4a4a',
+      fontSize: '40px',
+      fontWeight: 'bold',
+      color: '#ffffff',
       [theme.breakpoints.down('sm')]: {
         fontSize: '30px'
       }
     },
     h2: {
-      fontSize: '35px',
-      fontWeight: 'bold',
-      color: '#4a4a4a',
+      fontSize: '24px',
+      fontWeight: 'normal',
+      color: '#ffffff',
       [theme.breakpoints.down('sm')]: {
-        fontSize: '31px'
+        fontSize: '28px'
       }
     },
     h3: {
@@ -55,6 +55,13 @@ const customTheme = createTheme({
       color: '#4a4a4a',
       [theme.breakpoints.down('sm')]: {
         fontSize: '28px'
+      }
+    },
+    subtitle1: {
+      fontSize: '22px',
+      color: '#4a4a4a',
+      [theme.breakpoints.down('sm')]: {
+        fontSize: '18px'
       }
     },
     body1: {

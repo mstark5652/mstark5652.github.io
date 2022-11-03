@@ -1,13 +1,41 @@
-export default [
+export const subprojects = [
   {
-    title: 'Your Personal Connection to Health',
-    description: 'haley is a social platform connecting verified clinicians and clinician produced content with consumers.',
+    title: 'mui-rich-editor',
+    description: 'Library for rich text editor and viewer build with Material UI, React, and Slate.js.',
+    link: { to: 'https://github.com/HaleyInc/mui-rich-editor', text: 'GitHub Repo' }
+  },
+  {
+    title: 'zenv',
+    description: 'Command line application to manage different environment variables for different projects on your local system.',
+    link: { to: 'https://github.com/mstark5652/zenv', text: 'GitHub Repo' }
+  },
+  {
+    title: 'hashconnect-example',
+    description: 'React example of connecting to a HashPack wallet via Hashconnect.',
+    link: { to: 'https://github.com/StarkTechLabs/hashconnect-example', text: 'GitHub Repo' }
+  },
+  {
+    title: 'hedera-setup-go',
+    description: 'Command line tool to perform basic setup on the hedera network.',
+    link: { to: 'https://github.com/StarkTechLabs/hedera-setup-go', text: 'GitHub Repo' }
+  },
+  {
+    title: 'command-line-parser',
+    description: 'Simple command line parser with no dependencies.',
+    link: { to: 'https://github.com/mstark5652/command-line-parser', text: 'GitHub Repo' }
+  }
+]
+
+export const projects = [
+  {
+    title: 'Connect with Mental Health',
+    description: 'The therapist recommended resource for mental health content. haley has more than 1000+ pieces of mental health content created by clinicians plus journaling, emotion and feelings trackings, and custom reminders to help you prioritize your self-care.',
     link: {
       text: 'Connect',
       to: 'https://forhaley.com?cid=mstark.dev'
     },
     img: {
-      src: require('../img/boxhaley-green.png'),
+      src: require('../img/haley_app.png'),
       title: 'haley'
     }
   },

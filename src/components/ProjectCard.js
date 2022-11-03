@@ -1,26 +1,26 @@
 import React from 'react'
 
-import Paper from '@mui/material/Paper'
 import Typography from '@mui/material/Typography'
 import CardMedia from '@mui/material/CardMedia'
 import makeStyles from '@mui/styles/makeStyles'
-import CtaButton from '../components/CtaButton'
+import CtaButton from './CtaButton'
+import GreyCard from './GreyCard'
 
 const useStyles = makeStyles(theme => ({
-  paper: {
-    margin: theme.spacing(4),
-    padding: theme.spacing(3),
-    [theme.breakpoints.down('sm')]: {
-      margin: theme.spacing(2)
-    },
-    '& h4': {
-      textAlign: 'center',
-      margin: theme.spacing(2)
-    },
-    '& p': {
-      margin: theme.spacing(1)
-    }
-  },
+  // paper: {
+  //   margin: theme.spacing(4),
+  //   padding: theme.spacing(3),
+  //   [theme.breakpoints.down('sm')]: {
+  //     margin: theme.spacing(2)
+  //   },
+  //   '& h4': {
+  //     textAlign: 'center',
+  //     margin: theme.spacing(2)
+  //   },
+  //   '& p': {
+  //     margin: theme.spacing(1)
+  //   }
+  // },
   media: {
     maxWidth: '350px',
     height: '100%',
@@ -41,7 +41,7 @@ const useStyles = makeStyles(theme => ({
 const ProjectCard = ({ title, description, link, img }) => {
   const classes = useStyles()
   return (
-    <Paper className={classes.paper} elevation={3}>
+    <GreyCard>
       <CardMedia
         className={classes.media}
         src={img.src}
@@ -49,10 +49,10 @@ const ProjectCard = ({ title, description, link, img }) => {
         title={img.title}
         style={img.style || {}}
       />
-      <Typography variant='h4'>{title}</Typography>
-      <Typography variant='body1'>{description}</Typography>
+      <Typography variant='h4' textAlign='center' m={2}>{title}</Typography>
+      <Typography variant='body1' m={1}>{description}</Typography>
       <CtaButton text={link.text} to={link.to} />
-    </Paper>
+    </GreyCard>
   )
 }
 

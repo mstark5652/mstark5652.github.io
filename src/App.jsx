@@ -7,6 +7,7 @@ import theme from './common/theme'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Layout from './components/Layout'
+import About from './views/About'
 import ProjectsView from './views/ProjectsView'
 
 const AppContainer = () => (
@@ -14,6 +15,7 @@ const AppContainer = () => (
     <CssBaseline />
     <Header />
     <Layout>
+      <About />
       <ProjectsView />
     </Layout>
     <Footer />
