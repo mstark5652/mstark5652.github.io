@@ -56,10 +56,10 @@ const Header = () => {
             item xs={12} sm={6}
             className={classes.content}
           >
-            <Typography variant='h1' color='secondary'>
+            <Typography variant='h1' color='secondary' mt={3}>
               {strings.header.name}
             </Typography>
-            <Typography variant='h2' color='secondary'>
+            <Typography variant='h2' color='secondary' mt={3}>
               {strings.header.title}
             </Typography>
           </Grid>
