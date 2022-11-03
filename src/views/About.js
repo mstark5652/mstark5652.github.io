@@ -26,7 +26,7 @@ const About = () => {
         </Typography>
       </div>
       <GreyCard>
-        <Typography variant='body1' textAlign='center'>
+        <Typography variant='body1' textAlign='center' component='div'>
           {strings.about.description}
         </Typography>
       </GreyCard>

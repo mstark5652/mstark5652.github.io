@@ -64,12 +64,27 @@ const customTheme = createTheme({
         fontSize: '18px'
       }
     },
+    subtitle2: {
+      fontSize: '18px',
+      color: '#4a4a4a',
+      [theme.breakpoints.down('sm')]: {
+        fontSize: '16px'
+      }
+    },
     body1: {
       fontSize: '20px',
       fontWeight: 'lighter',
       color: '#4a4a4a',
       [theme.breakpoints.down('sm')]: {
         fontSize: '16px'
+      }
+    },
+    body2: {
+      fontSize: '16px',
+      fontWeight: 'lighter',
+      color: '#4a4a4a',
+      [theme.breakpoints.down('sm')]: {
+        fontSize: '14px'
       }
     }
   }

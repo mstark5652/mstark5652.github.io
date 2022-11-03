@@ -1,6 +1,6 @@
 export const subprojects = [
   {
-    title: 'mui-rich-editor',
+    title: 'MUI Rich Text Editor',
     description: 'Library for rich text editor and viewer build with Material UI, React, and Slate.js.',
     link: { to: 'https://github.com/HaleyInc/mui-rich-editor', text: 'GitHub Repo' }
   },
@@ -10,19 +10,51 @@ export const subprojects = [
     link: { to: 'https://github.com/mstark5652/zenv', text: 'GitHub Repo' }
   },
   {
-    title: 'hashconnect-example',
+    title: 'HashConnect (Crypto Wallet) Example',
     description: 'React example of connecting to a HashPack wallet via Hashconnect.',
     link: { to: 'https://github.com/StarkTechLabs/hashconnect-example', text: 'GitHub Repo' }
   },
   {
-    title: 'hedera-setup-go',
+    title: 'Hedera Setup',
     description: 'Command line tool to perform basic setup on the hedera network.',
     link: { to: 'https://github.com/StarkTechLabs/hedera-setup-go', text: 'GitHub Repo' }
   },
   {
-    title: 'command-line-parser',
+    title: 'Command Line Parser',
     description: 'Simple command line parser with no dependencies.',
     link: { to: 'https://github.com/mstark5652/command-line-parser', text: 'GitHub Repo' }
+  },
+  {
+    title: 'Mental Health Search Engine',
+    description: 'haley\'s mental health search engine is a closed search engine with more than 1400 responses indexed. Built with Go and bleve-search with an external REST API.'
+  },
+  {
+    title: 'SEO Keyword Categorization Tool',
+    description: 'Utilizing text classification and named entity recognition, this application categorizes and labels user search queries by analyzing and tagging content in bulk while providing a dashboard for results and aggregated insights.'
+  },
+  {
+    title: 'Multi-Tenant Quoting API',
+    description: 'A REST API for multiple partners to store data, get recommendations, and retrieve quotes for their customers. Built with a microservice architecture and supported service authentication and tenancy.'
+  },
+  {
+    title: 'Revenue Automation',
+    description: 'Created automated flows to calculate the revenue for a given quote based on several factors of the quote. The results were then synced into a data warehouse to populate multiple reports around the company\'s revenue. Providing extra insight into sales.'
+  },
+  {
+    title: 'Automated Electron Packager',
+    description: 'Automated process of packaging up HTML/JS content into Windows/macOS apps. Wrapping web components using Electron, streamlined packaging and signing process, and automated and offline analytics are some of the features added to make building desktop apps simple and efficient.'
+  },
+  {
+    title: 'Medical Documentation Search Engine',
+    description: 'A search engine supplied with thousands of medical documents indexed and analyzed. With a web dashboard to access smart search and filters for call centers to access the exact document and section needed while on the phone.'
+  },
+  {
+    title: '360 Virtual Tour',
+    description: 'Application built in React which allows users to view 360 photos of different rooms and navigate through multiple rooms using different 360 photos. The web app was wrapped in a native wrapper to run on iOS and Android.'
+  },
+  {
+    title: 'Remote Display',
+    description: 'iPad and desktop application built in React. iPad app works as a remote for the desktop app to change up what is displayed.'
   }
 ]
 

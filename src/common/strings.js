@@ -1,3 +1,5 @@
+import React from 'react'
+
 export default {
   header: {
     name: 'Michael Stark',
@@ -5,7 +7,13 @@ export default {
   },
   about: {
     title: 'About',
-    description: 'Experienced engineer skilled in full stack development, natural language processing, and text classification. With a passion for learning and building new things.'
+    description: (
+      <>
+        Michael is the Head of Technology at haley, an early-stage startup building the home page of mental health. A platform for mental health content where every content creator is a verified clinician.
+        <br /><br />
+        Michael has been creating software products since 2012. His previous experience has been across many industries and areas around software development. Spanning from mobile development, conference tech, machine learning, virtual events, cybersecurity, and digital health. He has a passion for entrepreneurship and helping others.
+      </>
+    )
   },
   projects: {
     title: 'Projects'
