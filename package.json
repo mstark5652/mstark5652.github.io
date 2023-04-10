@@ -18,7 +18,7 @@
     "lint:fix": "standard ./src/**/*.js --fix"
   },
   "devDependencies": {
-    "aws-sdk": "^2.1049.0",
+    "aws-sdk": "^2.1354.0",
     "mime": "^2.6.0",
     "rewp": "^0.7.1",
     "standard": "^16.0.4"
