@@ -3,7 +3,7 @@ import React from 'react'
 export default {
   header: {
     name: 'Michael Stark',
-    title: 'Entrepreneur - Builder - Software Engineer - Innovator'
+    title: 'Entrepreneur - Builder - Software Engineer'
   },
   about: {
     title: 'About',

@@ -64,7 +64,7 @@ export const projects = [
     description: 'The therapist recommended resource for mental health content. haley has more than 1000+ pieces of mental health content created by clinicians plus journaling, emotion and feelings trackings, and custom reminders to help you prioritize your self-care.',
     link: {
       text: 'Connect',
-      to: 'https://forhaley.com?cid=mstark.dev'
+      to: 'https://www.linkedin.com/company/haleyinc'
     },
     img: {
       src: require('../img/haley_app.png'),
