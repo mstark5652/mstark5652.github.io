@@ -61,7 +61,7 @@ export const subprojects = [
 export const projects = [
   {
     title: 'Connect with Mental Health',
-    description: 'The therapist recommended resource for mental health content. haley has more than 1000+ pieces of mental health content created by clinicians plus journaling, emotion and feelings trackings, and custom reminders to help you prioritize your self-care.',
+    description: 'Co-founded the first content distribution platform (web and mobile app) requiring creators to be licensed clinicians Quickly grew to 200+ clinicians and thousands of monthly content views',
     link: {
       text: 'Connect',
       to: 'https://www.linkedin.com/company/haleyinc'
@@ -110,7 +110,7 @@ export const projects = [
   },
   {
     title: 'Comic Book Realm Mobile Apps',
-    description: 'Price guide and tracking for all your comic books.',
+    description: 'Price guide and tracking for all your comic books. I was responsible for building the iOS and Android mobile apps to accompany the website.',
     link: {
       text: 'Explore',
       to: 'https://comicbookrealm.com?cid=mstark.dev'
