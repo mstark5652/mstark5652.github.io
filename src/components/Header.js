@@ -4,7 +4,13 @@ import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
 import CardMedia from '@mui/material/CardMedia'
+import Button from '@mui/material/Button'
+import Box from '@mui/material/Box'
 import makeStyles from '@mui/styles/makeStyles'
+
+import MailOutlineIcon from '@mui/icons-material/MailOutline'
+import GitHubIcon from '@mui/icons-material/GitHub'
+import LinkedInIcon from '@mui/icons-material/LinkedIn'
 
 import strings from '../common/strings'
 
@@ -62,6 +68,17 @@ const Header = () => {
             <Typography variant='h2' color='secondary' mt={3}>
               {strings.header.title}
             </Typography>
+            <Box m={2} display="flex" alignItems="center" justifyContent="space-evenly">
+              <Button href={strings.footer.github}>
+                <GitHubIcon fontSize='large' color='secondary' />
+              </Button>
+              <Button href={strings.footer.linkedin}>
+                <LinkedInIcon fontSize='large' color='secondary' />
+              </Button>
+              <Button href={strings.footer.email}>
+                <MailOutlineIcon fontSize='large' color='secondary' />
+              </Button>
+            </Box>
           </Grid>
 
         </Grid>
