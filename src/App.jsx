@@ -8,6 +8,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import Layout from './components/Layout'
 import About from './views/About'
+import Current from './views/Current'
 import ProjectsView from './views/ProjectsView'
 
 const AppContainer = () => (
@@ -16,6 +17,7 @@ const AppContainer = () => (
     <Header />
     <Layout>
       <About />
+      <Current />
       <ProjectsView />
     </Layout>
     <Footer />
