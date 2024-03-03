@@ -32,13 +32,14 @@ export default {
       },
       {
         title: '',
-        description: 'Software architect building new systems for the insurance industry',
+        description: 'Engineering Manager building new systems for the insurance industry.',
         link: {
           text: 'Explore',
           to: 'https://brightway.com'
         },
         img: {
-          src: "https://www.brightway.com/Content/Corporate/img/logo-brightway-insurance.png?format=webp",
+          src: require('../img/brightway_icon.jpeg'),
+          style: { maxWidth: '150px' },
           title: 'Brightway Insurance'
         }
       },
