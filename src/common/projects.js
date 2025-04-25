@@ -78,8 +78,8 @@ export const projects = [
     description:
       "The app to track your spending and monitor where your money goes! Now available on iOS in the App Store.",
     link: {
-      text: "App Store",
-      to: "https://apps.apple.com/us/app/velvet-track-your-spending/id6447703078",
+      text: "Download Today",
+      to: "https://velvet.starktech.dev",
     },
     img: {
       src: require("../img/velvet_dual.png"),
