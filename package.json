@@ -11,7 +11,7 @@
   "author": "mstark5652",
   "license": "SEE LICENSE IN LICENSE.md",
   "scripts": {
-    "start": "rewp build --watch",
+    "start": "rewp build --watch --port 3001",
     "build": "rewp build",
     "release": "export NODE_ENV=production && npm run build",
     "lint": "standard ./src/**/*.js",

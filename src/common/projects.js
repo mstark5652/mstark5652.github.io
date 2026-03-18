@@ -70,20 +70,45 @@ export const subprojects = [
     description:
       "iPad and desktop application built in React. iPad app works as a remote for the desktop app to change up what is displayed.",
   },
-];
+]
 
 export const projects = [
   {
-    title: "Velvet - Track Your Spending",
+    title: "Soccer Rewind",
     description:
-      "The app to track your spending and monitor where your money goes! Now available on iOS in the App Store.",
+      "MLS, NWSL, USMNT, and USWNT — news, videos, and podcasts from the best sources, all in one personalized feed.",
     link: {
-      text: "Download Today",
-      to: "https://velvet.starktech.dev",
+      text: "Read More",
+      to: "https://soccerrewind.com",
     },
     img: {
-      src: require("../img/velvet_dual.png"),
-      title: "velvet",
+      src: require("../img/soccerrewind.png"),
+      title: "Soccer Rewind",
+    },
+  },
+  {
+    title: "PoleVaultCoach",
+    description:
+      "Upload your training videos and get instant, frame-by-frame biomechanical analysis from our AI coach. Improve your run-up, plant, and clearance today.",
+    link: {
+      text: "Jump In",
+      to: "https://polevault.coach/",
+    },
+    img: {
+      src: require("../img/polevaultcoach.png"),
+      title: "PoleVaultCoach",
+    },
+  },
+  {
+    title: "RecruitReach",
+    description: "The AI-Powered Recruiting Co-Pilot for High School Athletes",
+    link: {
+      text: "Learn More",
+      to: "https://www.recruitreach.com/",
+    },
+    img: {
+      src: require("../img/recruitreach.png"),
+      title: "RecruitReach",
     },
   },
   {
@@ -165,4 +190,4 @@ export const projects = [
   //     title: "Alexa device and phone",
   //   },
   // },
-];
+]
