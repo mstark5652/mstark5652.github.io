@@ -73,19 +73,19 @@ export const subprojects = [
 ]
 
 export const projects = [
-  {
-    title: "Soccer Rewind",
-    description:
-      "MLS, NWSL, USMNT, and USWNT — news, videos, and podcasts from the best sources, all in one personalized feed.",
-    link: {
-      text: "Read More",
-      to: "https://soccerrewind.com",
-    },
-    img: {
-      src: require("../img/soccerrewind.png"),
-      title: "Soccer Rewind",
-    },
-  },
+  // {
+  //   title: 'Soccer Rewind',
+  //   description:
+  //     'MLS, NWSL, USMNT, and USWNT — news, videos, and podcasts from the best sources, all in one personalized feed.',
+  //   link: {
+  //     text: 'Read More',
+  //     to: 'https://soccerrewind.com'
+  //   },
+  //   img: {
+  //     src: require('../img/soccerrewind.png'),
+  //     title: 'Soccer Rewind'
+  //   }
+  // },
   {
     title: "PoleVaultCoach",
     description:

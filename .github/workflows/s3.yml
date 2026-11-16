@@ -10,11 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js 18.x
-        uses: actions/setup-node@v2
+      - uses: actions/checkout@v5
+      - name: Use Node.js 24.x
+        uses: actions/setup-node@v5
         with:
-          node-version: 18.x
+          node-version: 24.x
       - name: Install dependencies
         run: npm ci
       - name: Build
@@ -25,7 +25,7 @@ jobs:
       - name: Set Package Version
         run: npm version ${{ env.tag }} --no-git-tag-version
       - name: Upload to s3
-        run: node ./scripts/publishS3.js upload
+        run: node ./scripts/publishS3.mjs upload
         env:
           CI: true
           AWS_KEY: ${{ secrets.AWS_KEY }}

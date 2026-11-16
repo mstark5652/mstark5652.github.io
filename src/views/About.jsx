@@ -1,32 +1,22 @@
 import React from 'react'
 
 import Typography from '@mui/material/Typography'
-import makeStyles from '@mui/styles/makeStyles'
+import Box from '@mui/material/Box'
 
 import GreyCard from '../components/GreyCard'
 import strings from '../common/strings'
-
-const useStyles = makeStyles(theme => ({
-  header: {
-    textAlign: 'center',
-    margin: theme.spacing(4, 0, 2, 0),
-    [theme.breakpoints.down('sm')]: {
-      margin: theme.spacing(2, 0)
-    }
-  }
-}))
+import { sectionHeader } from '../common/styles'
 
 const About = () => {
-  const classes = useStyles()
   return (
     <>
-      <div className={classes.header}>
+      <Box sx={sectionHeader}>
         <Typography variant='h3'>
           {strings.about.title}
         </Typography>
-      </div>
+      </Box>
       <GreyCard>
-        <Typography variant='body1' textAlign='center' component='div'>
+        <Typography variant='body1' component='div' sx={{ textAlign: 'center' }}>
           {strings.about.description}
         </Typography>
       </GreyCard>

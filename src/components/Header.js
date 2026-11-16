@@ -6,51 +6,39 @@ import Typography from '@mui/material/Typography'
 import CardMedia from '@mui/material/CardMedia'
 import Button from '@mui/material/Button'
 import Box from '@mui/material/Box'
-import makeStyles from '@mui/styles/makeStyles'
-
-import MailOutlineIcon from '@mui/icons-material/MailOutline'
+import MailOutlineIcon from '@mui/icons-material/MailOutlined'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
 
 import strings from '../common/strings'
 
-const useStyles = makeStyles(theme => ({
-  header: {
-    backgroundColor: theme.palette.primary.main,
-    padding: theme.spacing(4)
-  },
-  content: {
-    textAlign: 'center'
-  },
-  avatar: {
-    '& img': {
-      margin: 'auto',
-      border: '1px solid transparent',
-      borderRadius: '25px',
-      width: '200px',
-      height: '200px'
-    }
-  }
-}))
-
 const profile = require('../img/me.jpg')
 
 const Header = () => {
-  const classes = useStyles()
-
   return (
-    <header className={classes.header}>
+    <Box
+      component='header'
+      sx={theme => ({ backgroundColor: theme.palette.primary.main, padding: theme.spacing(4) })}
+    >
       <Container
         maxWidth='lg' disableGutters
       >
         <Grid
           container spacing={1}
-          justify='center'
+          justifyContent='center'
           alignItems='center'
         >
           <Grid
-            item xs={12} sm={6}
-            className={classes.avatar}
+            size={{ xs: 12, sm: 6 }}
+            sx={{
+              '& img': {
+                margin: 'auto',
+                border: '1px solid transparent',
+                borderRadius: '25px',
+                width: '200px',
+                height: '200px'
+              }
+            }}
           >
             <CardMedia
               src={profile}
@@ -59,16 +47,16 @@ const Header = () => {
             />
           </Grid>
           <Grid
-            item xs={12} sm={6}
-            className={classes.content}
+            size={{ xs: 12, sm: 6 }}
+            sx={{ textAlign: 'center' }}
           >
-            <Typography variant='h1' color='secondary' mt={3}>
+            <Typography variant='h1' color='secondary' sx={{ mt: 3 }}>
               {strings.header.name}
             </Typography>
-            <Typography variant='h2' color='secondary' mt={3}>
+            <Typography variant='h2' color='secondary' sx={{ mt: 3 }}>
               {strings.header.title}
             </Typography>
-            <Box m={2} display="flex" alignItems="center" justifyContent="space-evenly">
+            <Box sx={{ m: 2, display: 'flex', alignItems: 'center', justifyContent: 'space-evenly' }}>
               <Button href={strings.footer.github}>
                 <GitHubIcon fontSize='large' color='secondary' />
               </Button>
@@ -84,7 +72,7 @@ const Header = () => {
         </Grid>
         <br />
       </Container>
-    </header>
+    </Box>
   )
 }
 

@@ -1,0 +1,12 @@
+version: 2
+
+updates:
+  # security updates only (also requires "Dependabot security updates" enabled in repo settings)
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    open-pull-requests-limit: 0
+    labels:
+      - "security"
+      - "dependabot"
