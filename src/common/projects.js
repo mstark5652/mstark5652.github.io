@@ -6,7 +6,8 @@ export const subprojects = [
   },
   {
     title: "MUI Rich Text Editor",
-    description: "Library for rich text editor and viewer build with Material UI, React, and Slate.js.",
+    description:
+      "Library for rich text editor and viewer build with Material UI, React, and Slate.js.",
     link: { to: "https://github.com/HaleyInc/mui-rich-editor", text: "GitHub Repo" },
   },
   {
@@ -73,38 +74,41 @@ export const subprojects = [
 ]
 
 export const projects = [
-  // {
-  //   title: 'Soccer Rewind',
-  //   description:
-  //     'MLS, NWSL, USMNT, and USWNT — news, videos, and podcasts from the best sources, all in one personalized feed.',
-  //   link: {
-  //     text: 'Read More',
-  //     to: 'https://soccerrewind.com'
-  //   },
-  //   img: {
-  //     src: require('../img/soccerrewind.png'),
-  //     title: 'Soccer Rewind'
-  //   }
-  // },
   {
-    title: "PoleVaultCoach",
+    title: "Alfi",
+    tags: ["Health tech", "AI", "FHIR"],
     description:
-      "Upload your training videos and get instant, frame-by-frame biomechanical analysis from our AI coach. Improve your run-up, plant, and clearance today.",
+      "A health platform that turns labs and connected health data into a clear, personal picture, with a console for the providers who support each client.",
     link: {
-      text: "Jump In",
-      to: "https://polevault.coach/",
+      text: "Visit Alfi",
+      to: "https://hialfi.com?cid=mstark.dev",
     },
     img: {
-      src: require("../img/polevaultcoach.png"),
+      src: require("../img/alfi.png"),
+      title: "Alfi logo",
+    },
+  },
+  {
+    title: "PoleVaultCoach",
+    tags: ["AI", "Computer vision", "Sports"],
+    description:
+      "Upload a training video and get frame-by-frame biomechanical feedback from an AI coach on your run-up, plant, and clearance.",
+    link: {
+      text: "Jump in",
+      to: "https://polevault.coach?cid=mstark.dev",
+    },
+    img: {
+      src: require("../img/pv_iphone.png"),
       title: "PoleVaultCoach",
     },
   },
   {
     title: "RecruitReach",
-    description: "The AI-Powered Recruiting Co-Pilot for High School Athletes",
+    tags: ["AI", "Recruiting", "Sports"],
+    description: "An AI-powered recruiting co-pilot for high school athletes.",
     link: {
-      text: "Learn More",
-      to: "https://www.recruitreach.com/",
+      text: "Learn more",
+      to: "https://www.recruitreach.com?cid=mstark.dev",
     },
     img: {
       src: require("../img/recruitreach.png"),
@@ -112,24 +116,26 @@ export const projects = [
     },
   },
   {
-    title: "Connect with Mental Health",
+    title: "haley",
+    tags: ["Co-founder", "Digital health", "Web + mobile"],
     description:
-      "Co-founded the first content distribution platform (web and mobile app) requiring creators to be licensed clinicians. Quickly grew to 200+ clinicians and thousands of monthly content views.",
+      "Co-founded a mental health content platform where every creator is a licensed clinician. Grew to 200+ clinicians and thousands of monthly views.",
     link: {
       text: "Connect",
-      to: "https://www.linkedin.com/company/haleyinc",
+      to: "https://www.linkedin.com/company/haleyinc?cid=mstark.dev",
     },
     img: {
       src: require("../img/haley_app.png"),
-      title: "haley",
+      title: "haley app",
     },
   },
   {
-    title: "Mixologist - The Robotic Bartender",
+    title: "Mixologist",
+    tags: ["Voice", "Robotics", "NLP"],
     description:
-      "Mixologist is the world's first voice-powered robotic bartender that uses natural language to take your order and serve your favorite mixed drinks.",
+      "A voice-powered robotic bartender that takes your order in natural language and mixes the drink.",
     link: {
-      text: "Drink Up",
+      text: "Drink up",
       to: "https://www.instagram.com/mixologist.ai/?cid=mstark.dev",
     },
     img: {
@@ -139,42 +145,44 @@ export const projects = [
   },
   {
     title: "RightRoom",
+    tags: ["Video", "Virtual events"],
     description:
-      "RightRoom is software that enables attendees to enter a simulated room and fluidly engage in one-on-one and group video conversations.",
+      "Virtual event software where attendees move through a simulated room and drop into one-on-one or group video conversations.",
     link: {
-      text: "Join the Conversation",
+      text: "Join the conversation",
       to: "https://www.linkedin.com/company/rightroom/?cid=mstark.dev",
     },
     img: {
       src: require("../img/rr_chat.png"),
-      title: "RightRoom Chat",
-      style: { maxWidth: 500 },
+      title: "RightRoom chat",
     },
   },
   {
-    title: "",
+    title: "HumanKind",
+    tags: ["Hackathon winner", "Marketplace", "Web3"],
     description:
-      "HumanKind is a decentralized marketplace that aggregates, sponsors and rewards altruistic behavior and random acts of kindness, giving back to the communities, businesses and charities you care about. Essentially, the kinder you are, the more you—and the community you are a part of—get back. My team started working on this at the Hedera20 hackathon where we walked away with multiple prizes.",
+      "A decentralized marketplace that rewards acts of kindness. Started at the Hedera20 hackathon, where the team won multiple prizes.",
     link: {
       text: "Be HumanKind",
       to: "https://humankind.ly?cid=mstark.dev",
     },
     img: {
       src: require("../img/hk_logo.png"),
-      title: "HumanKind Logo",
+      title: "HumanKind logo",
     },
   },
   {
-    title: "Comic Book Realm Mobile Apps",
+    title: "Comic Book Realm",
+    tags: ["iOS", "Android"],
     description:
-      "Price guide and tracking for all your comic books. I was responsible for building the iOS and Android mobile apps to accompany the website.",
+      "Built the iOS and Android apps for a comic book price guide and collection tracker.",
     link: {
       text: "Explore",
       to: "https://comicbookrealm.com?cid=mstark.dev",
     },
     img: {
       src: require("../img/cbr_screens.png"),
-      title: "App Screenshots",
+      title: "Comic Book Realm app screenshots",
     },
   },
   // {

@@ -1,61 +1,52 @@
-import React from 'react'
+const email = "michael@starktech.dev"
 
 export default {
-  header: {
-    name: 'Michael Stark',
-    title: 'Entrepreneur - Builder - Software'
+  name: "Michael Stark",
+  company: { name: "Stark Tech", href: "https://starktech.dev" },
+  hero: {
+    eyebrow: "Founder, Stark Tech",
+    title: "I help founders turn ideas into shipped products.",
+    intro:
+      "Product strategy, custom development, and hands-on technical leadership for startups. I've built and launched products across digital health, AI, sports, and live events, including my own.",
+    primaryCta: "Work with me",
+    secondaryCta: "See the work",
   },
-  about: {
-    title: 'About',
-    description: (
-      <>
-        Michael is a software developer focused on product, efficiency, leveling up as a team, and building great
-        software.
-        <br />
-        <br />
-        Michael has been creating software products since 2012. His previous experience has been across many industries
-        and areas around software development. Spanning from mobile development, conference tech, machine learning,
-        virtual events, insurance, and digital health. He has a passion for entrepreneurship and helping others.
-      </>
-    )
-  },
-  current: {
-    title: 'Currently Working On',
+  services: {
+    title: "How I can help",
     items: [
       {
-        title: '',
-        description: 'Startup consulting and product strategy services with custom development.',
-        link: {
-          text: 'Explore',
-          to: 'https://starktech.dev'
-        },
-        img: {
-          src: require('../img/mix_cosmo.png'),
-          title: 'Stark Tech'
-        }
+        title: "Product strategy",
+        description:
+          "Sharpen the idea, scope the first version, and decide what to build now and what can wait.",
       },
       {
-        title: '',
-        description: 'Engineering Manager building new systems for the insurance industry.',
-        link: {
-          text: 'Explore',
-          to: 'https://brightway.com'
-        },
-        img: {
-          src: require('../img/brightway_icon.jpeg'),
-          style: { maxWidth: '150px' },
-          title: 'Brightway Insurance'
-        }
-      }
-    ]
+        title: "Custom development",
+        description:
+          "Web, mobile, and AI features, designed and built end to end, then shipped to real users.",
+      },
+      {
+        title: "Technical leadership",
+        description:
+          "Architecture, hiring, and team practices that keep a growing product moving quickly.",
+      },
+    ],
   },
-  projects: {
-    title: 'Projects'
+  work: {
+    title: "Work",
+    intro: "Products I've founded, built, or led, from AI coaching to digital health.",
   },
-  footer: {
-    title: 'Michael Stark',
-    github: 'https://github.com/mstark5652',
-    linkedin: 'https://www.linkedin.com/in/michaelstark5652',
-    email: 'mailto:michael@starktech.dev'
-  }
+  more: {
+    toggle: "more projects",
+  },
+  contact: {
+    title: "Have something to build?",
+    body: "Tell me about your product and where you're stuck. I'll tell you honestly whether I can help.",
+    cta: "Email me",
+    mailto: `mailto:${email}?subject=${encodeURIComponent("Project inquiry")}`,
+  },
+  links: [
+    { label: "GitHub", href: "https://github.com/mstark5652" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/michaelstark5652" },
+    { label: "Email", href: `mailto:${email}` },
+  ],
 }

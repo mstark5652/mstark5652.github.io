@@ -1,22 +1,28 @@
-import CssBaseline from "@mui/material/CssBaseline"
-import { ThemeProvider } from "@mui/material/styles"
+import React from "react"
 
-import theme from "./common/theme"
+import Nav from "./components/Nav"
+import Footer from "./components/Footer"
+import Hero from "./views/Hero"
+import Services from "./views/Services"
+import Work from "./views/Work"
+import Contact from "./views/Contact"
+import useReveal from "./hooks/useReveal"
 
-import Header from "./components/Header"
-import Layout from "./components/Layout"
-import About from "./views/About"
-import ProjectsView from "./views/ProjectsView"
+const AppContainer = () => {
+  useReveal()
 
-const AppContainer = () => (
-  <ThemeProvider theme={theme}>
-    <CssBaseline />
-    <Header />
-    <Layout>
-      <About />
-      <ProjectsView />
-    </Layout>
-  </ThemeProvider>
-)
+  return (
+    <>
+      <Nav />
+      <main>
+        <Hero />
+        <Services />
+        <Work />
+        <Contact />
+      </main>
+      <Footer />
+    </>
+  )
+}
 
 export default AppContainer

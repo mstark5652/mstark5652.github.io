@@ -14,8 +14,8 @@
     "start": "webpack serve --mode development",
     "build": "webpack --mode development",
     "release": "webpack --mode production",
-    "lint": "standard src scripts webpack.config.js",
-    "lint:fix": "standard src scripts webpack.config.js --fix"
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "devDependencies": {
     "@aws-sdk/client-s3": "^3.1170.0",
@@ -26,18 +26,14 @@
     "css-loader": "^7.1.5",
     "mime": "^4.1.2",
     "mini-css-extract-plugin": "^2.10.2",
+    "prettier": "^3.10.1",
     "sass": "^1.108.2",
     "sass-loader": "^17.1.0",
-    "standard": "^17.1.2",
     "webpack": "^5.112.2",
     "webpack-cli": "^7.3.1",
     "webpack-dev-server": "^6.1.0"
   },
   "dependencies": {
-    "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.1",
-    "@mui/icons-material": "^9.5.0",
-    "@mui/material": "^9.5.0",
     "react": "^19.3.1",
     "react-dom": "^19.3.1"
   },

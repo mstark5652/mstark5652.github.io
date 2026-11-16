@@ -1,55 +1,53 @@
-const path = require('path')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const path = require("path")
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 
 module.exports = (env, argv) => {
-  const production = argv.mode === 'production'
+  const production = argv.mode === "production"
 
   return {
-    entry: path.resolve(__dirname, 'src', 'index.js'),
+    entry: path.resolve(__dirname, "src", "index.js"),
     output: {
-      path: path.resolve(__dirname, 'build'),
-      publicPath: 'build/',
-      filename: 'bundle.js',
+      path: path.resolve(__dirname, "build"),
+      publicPath: "build/",
+      filename: "bundle.js",
       // md5 keeps image filenames stable (index.html's og:image references one)
-      hashFunction: 'md5',
+      hashFunction: "md5",
       hashDigestLength: 32,
-      clean: true
+      clean: true,
     },
     resolve: {
-      extensions: ['.js', '.jsx', '.json', '.scss']
+      extensions: [".js", ".jsx", ".json", ".scss"],
     },
-    devtool: production ? false : 'source-map',
-    plugins: [
-      new MiniCssExtractPlugin({ filename: 'bundle.css' })
-    ],
+    devtool: production ? false : "source-map",
+    plugins: [new MiniCssExtractPlugin({ filename: "bundle.css" })],
     module: {
       rules: [
         {
           test: /\.s[ac]ss$/,
-          use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+          use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
         },
         {
           test: /\.(jpe?g|png|gif|svg)$/i,
-          type: 'asset/resource',
-          generator: { filename: 'img/[contenthash][ext]' }
+          type: "asset/resource",
+          generator: { filename: "img/[contenthash][ext]" },
         },
         {
           test: /\.jsx?$/,
-          include: path.resolve(__dirname, 'src'),
-          loader: 'babel-loader',
+          include: path.resolve(__dirname, "src"),
+          loader: "babel-loader",
           options: {
-            presets: ['@babel/preset-env', '@babel/preset-react']
-          }
-        }
-      ]
+            presets: ["@babel/preset-env", "@babel/preset-react"],
+          },
+        },
+      ],
     },
     performance: {
-      hints: false
+      hints: false,
     },
     devServer: {
       port: 3001,
       static: { directory: __dirname, watch: false },
-      devMiddleware: { publicPath: '/build/' }
-    }
+      devMiddleware: { publicPath: "/build/" },
+    },
   }
 }
