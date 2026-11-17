@@ -36,7 +36,8 @@ module.exports = (env, argv) => {
           include: path.resolve(__dirname, "src"),
           loader: "babel-loader",
           options: {
-            presets: ["@babel/preset-env", "@babel/preset-react"],
+            // babel 8 infers dev JSX from NODE_ENV, not webpack's mode
+            presets: ["@babel/preset-env", ["@babel/preset-react", { development: !production }]],
           },
         },
       ],
